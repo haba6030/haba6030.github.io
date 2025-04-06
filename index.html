@@ -1,4 +1,3 @@
-<!-- 너의 소개가 들어갈 홈페이지 메인 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,51 +9,98 @@
     header { background: #004080; color: white; text-align: center; padding: 2rem; }
     section { max-width: 800px; margin: auto; padding: 2rem; }
     h1, h2 { color: #004080; }
-    .project { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .project, .award, .education, .leadership, .skills { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     footer { text-align: center; padding: 1rem; color: #aaa; }
     a { color: #004080; }
+    img.profile { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1>김진일</h1>
-    <p>심리학 · 언어학 · 컴퓨터공학</p>
+    <img src="profile.jpg" alt="Jinil Kim" class="profile">
+    <h1>Jinil Kim</h1>
+    <p>Computational Cognitive Psychology · Linguistics · AI</p>
     <p>
-      <a href=\"mailto:haba6030@snu.ac.kr\">이메일</a> |
-      <a href=\"https://github.com/haba6030\">GitHub</a> |
-      <a href=\"JINILKIM_CV.pdf\">CV</a>
+      <a href="mailto:haba6030@snu.ac.kr">haba6030@snu.ac.kr</a> |
+      <a href="JINILKIM_CV.pdf">CV</a>
     </p>
   </header>
 
   <section>
-    <h2>연구 관심 분야</h2>
+    <h2>Research Interests</h2>
     <ul>
-      <li>Computational Cognitive Psychology</li>
-      <li>Machine Learning & Neuroimaging</li>
+      <li>Computational Cognitive Psychology: Clarifying causal factors of happiness via decoding and measurement</li>
+      <li>EEG & Neuroimaging data analysis (N400/P600)</li>
+      <li>Language, Narrative, and Brain interaction</li>
     </ul>
   </section>
 
   <section>
-    <h2>연구 실적</h2>
-    <div id=\"projects\"></div>
+    <h2>Education</h2>
+    <div class="education">
+      <strong>Seoul National University</strong><br>
+      Major: Linguistics, Psychology, Computer Science<br>
+      GPA: 4.15 / 4.3<br>
+      Period: Mar. 2021 – (Jul. 2023 – Jan. 2025: Military Service)<br>
+      Relevant Courses: Clinical Neuropsychology, Brain-Mind-Behavior, Computational Linguistics
+    </div>
+  </section>
+
+  <section>
+    <h2>Research Experience</h2>
+    <div class="project">
+      <strong>How People Generate Narratives?</strong> – Seoul National University (Mar. – Jun. 2023)<br>
+      Investigated theoretical links between narrative production and comprehension using neural network literature review
+    </div>
+    <div class="project">
+      <strong>Development of Dependent Noun Termination Composition 'Deut'</strong> – SNU (Sep. – Dec. 2022)<br>
+      Compared modern and historical usage of 'Deut'; proposed revised definition and development process
+    </div>
+    <div class="project">
+      <strong>Effect of Practice Test Form on Essay Evaluation Results</strong> – SNU (Sep. – Dec. 2022)<br>
+      Designed and conducted experiment on open vs. closed book test formats on essay grading
+    </div>
+    <div class="project">
+      <strong>Learning Effects of Neologism’s Modulation Method</strong> – SNU (Sep. – Dec. 2021)<br>
+      Measured N400/P600 amplitude in response to neologisms using EEG and behavioral data
+    </div>
+  </section>
+
+  <section>
+    <h2>Grants</h2>
+    <div class="award">Megastudy Student Achievement Scholarship (18th): Mar. 2021 – Mar. 2022</div>
+    <div class="award">Merit Scholarship: Mar. 2022, Sep. 2022, Mar. 2023</div>
+  </section>
+
+  <section>
+    <h2>Awards & Competitions</h2>
+    <div class="award">Cheonan City Data Analysis Idea Competition (Jul. 2024) – Urban development proposals using public data</div>
+    <div class="award">SNU Liberal Arts Competition – Grand Prize (Jul. 2023) – Interdisciplinary chatbot curriculum proposal</div>
+    <div class="award">Ambient AI Competition (Dec. 2022 – Jan. 2023) – Fashion recommendation using VGG16 + MLP</div>
+    <div class="award">SNU Multidisciplinary Essay Contest – Encouragement Prize (Apr. 2022)</div>
+  </section>
+
+  <section>
+    <h2>Leadership & Projects</h2>
+    <div class="leadership">
+      <strong>SNUMentalCare, Student Council Program (President)</strong> – Sep. 2021 – Jul. 2023<br>
+      Led 24-member team to organize campus-wide mental health programs in collaboration with SNU Campus Life & Culture
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <strong>Languages:</strong> Korean (Native), English (Full Professional), French (Beginner)<br>
+      <strong>Programming:</strong> Python, Java, C, C++<br>
+      <strong>Data Analysis:</strong> R<br>
+      <strong>Tools:</strong> Praat<br>
+      <strong>Instrument:</strong> <a href="https://www.instagram.com/drum_jini/">Drum (Instagram)</a>
+    </div>
   </section>
 
   <footer>
     &copy; 2025 Jinil Kim
   </footer>
-
-  <script>
-    fetch('projects.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('projects');
-        data.forEach(p => {
-          const div = document.createElement('div');
-          div.className = 'project';
-          div.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p><p><strong>Year:</strong> ${p.year}</p>`;
-          container.appendChild(div);
-        });
-      });
-  </script>
 </body>
 </html>
