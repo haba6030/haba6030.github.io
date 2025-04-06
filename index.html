@@ -1,0 +1,60 @@
+<!-- 너의 소개가 들어갈 홈페이지 메인 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김진일 | 연구 포트폴리오</title>
+  <style>
+    body { font-family: sans-serif; background: #f7f7f7; padding: 0; margin: 0; color: #333; }
+    header { background: #004080; color: white; text-align: center; padding: 2rem; }
+    section { max-width: 800px; margin: auto; padding: 2rem; }
+    h1, h2 { color: #004080; }
+    .project { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    footer { text-align: center; padding: 1rem; color: #aaa; }
+    a { color: #004080; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>김진일</h1>
+    <p>심리학 · 언어학 · 컴퓨터공학</p>
+    <p>
+      <a href=\"mailto:haba6030@snu.ac.kr\">이메일</a> |
+      <a href=\"https://github.com/haba6030\">GitHub</a> |
+      <a href=\"cv.pdf\">CV</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>연구 관심 분야</h2>
+    <ul>
+      <li>Computational Cognitive Psychology</li>
+      <li>Machine Learning & Neuroimaging</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>연구 실적</h2>
+    <div id=\"projects\"></div>
+  </section>
+
+  <footer>
+    &copy; 2025 Jinil Kim
+  </footer>
+
+  <script>
+    fetch('projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('projects');
+        data.forEach(p => {
+          const div = document.createElement('div');
+          div.className = 'project';
+          div.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p><p><strong>Year:</strong> ${p.year}</p>`;
+          container.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
