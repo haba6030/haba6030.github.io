@@ -1,7 +1,47 @@
 [
   {
-    "title": "TBA",
-    "description": "TBA",
-    "year": "2025"
+    "title": "How People Generate Narratives?",
+    "description": "Investigated theoretical links between narrative production and comprehension using neural network literature review (SNU, Mar.–Jun. 2023).",
+    "year": "2023"
+  },
+  {
+    "title": "Development of Dependent Noun Termination Composition 'Deut'",
+    "description": "Compared modern and historical usage of 'Deut'; proposed revised definition and development process (SNU, Sep.–Dec. 2022).",
+    "year": "2022"
+  },
+  {
+    "title": "Effect of Practice Test Form on Essay Evaluation Results",
+    "description": "Designed and conducted experiment on open vs. closed book test formats on essay grading (SNU, Sep.–Dec. 2022).",
+    "year": "2022"
+  },
+  {
+    "title": "Learning Effects of Neologism’s Modulation Method",
+    "description": "Measured N400/P600 amplitude in response to neologisms using EEG and behavioral data (SNU, Sep.–Dec. 2021).",
+    "year": "2021"
+  },
+  {
+    "title": "Cheonan City Data Analysis Idea Competition",
+    "description": "Urban development proposals using infrastructure public data (Jul. 2024).",
+    "year": "2024"
+  },
+  {
+    "title": "SNU Liberal Arts Competition – Grand Prize",
+    "description": "Interdisciplinary chatbot curriculum proposal (Jul. 2023).",
+    "year": "2023"
+  },
+  {
+    "title": "Ambient AI Competition",
+    "description": "Fashion recommendation system using VGG16 and MLP (Dec. 2022 – Jan. 2023).",
+    "year": "2023"
+  },
+  {
+    "title": "SNU Multidisciplinary Essay Contest – Encouragement Prize",
+    "description": "Essay on the value of interdisciplinary study across five majors (Apr. 2022).",
+    "year": "2022"
+  },
+  {
+    "title": "SNUMentalCare Leadership",
+    "description": "Led a 24-member team for campus-wide mental health projects (Sep. 2021 – Jul. 2023).",
+    "year": "2023"
   }
 ]
