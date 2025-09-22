@@ -1,103 +1,225 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jinil Kim | Homepage</title>
+  <meta name="description" content="Jinil Kim — Computational Cognitive Psychology, Bayesian & RL-based modeling, EEG/fMRI/digital phenotype data." />
   <style>
-    body { font-family: sans-serif; background: #f7f7f7; padding: 0; margin: 0; color: #333; }
-    header { background: #002a50; color: white; text-align: center; padding: 2rem; }
-    section { max-width: 800px; margin: auto; padding: 2rem; }
-    h1 { color: #f7f7f7; }
-    h2 { color: #004080; }
-    .project, .award, .education, .leadership, .skills { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .contact-info { background: white; color: #f7f7f7; display: inline-block; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 1rem; }
-    footer { text-align: center; padding: 1rem; color: #aaa; }
-    a { color: #004080; text-decoration: none; }
-    img.profile { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem; }
+    :root{
+      --bg:#f6f7fb; --text:#1f2937; --muted:#6b7280; --brand:#0b3a75; --brand-2:#0f5ea8; --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); margin:0}
+    a{color:var(--brand-2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{background:linear-gradient(135deg,#012446 0%, #0f5ea8 100%); color:#fff; text-align:center; padding:3rem 1rem 2rem}
+    header .wrap{max-width:1000px; margin:0 auto}
+    img.profile{border-radius:50%; width:132px; height:132px; object-fit:cover; border:3px solid rgba(255,255,255,.7); box-shadow:0 6px 18px rgba(0,0,0,.25)}
+    h1{margin:.75rem 0 .25rem 0; font-size:2rem; letter-spacing:.2px}
+    .tagline{margin:0; color:#e6eef7}
+    .contacts{margin-top:1rem; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center}
+    .pill{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; padding:.45rem .75rem; border-radius:999px; display:inline-flex; gap:.4rem; align-items:center}
+    .pill a{color:#fff; text-decoration:none}
+    .pill a:focus, .pill a:hover{text-decoration:underline}
+    main{max-width:1000px; margin:0 auto; padding:2rem 1rem 3rem}
+    section{margin-bottom:1.25rem}
+    h2{color:var(--brand); font-size:1.35rem; margin:0 0 .75rem 0}
+    .grid{display:grid; grid-template-columns:1fr; gap:12px}
+    @media (min-width:760px){ .grid-2{grid-template-columns:1fr 1fr} }
+    .card{background:var(--card); border-radius:12px; padding:1rem 1.1rem; box-shadow:0 2px 10px rgba(5,18,46,.06)}
+    .row{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+    .title{font-weight:700}
+    .subtle{color:var(--muted)}
+    .bullets{margin:.45rem 0 0 1.1rem}
+    .bullets li{margin:.15rem 0}
+    .kv{display:flex; gap:.5rem; flex-wrap:wrap}
+    .kv .k{color:var(--muted)}
+    footer{color:#9ca3af; font-size:.9rem; text-align:center; padding:1.5rem}
+    .btn{display:inline-block; background:#fff; color:var(--brand-2); border:1px solid #cfe2ff; padding:.5rem .75rem; border-radius:10px}
+    .btn:hover{text-decoration:none; background:#f3f9ff}
   </style>
 </head>
 <body>
   <header>
-    <img src="Profile.jpg" alt="Jinil Kim" class="profile">
-    <h1>Jinil Kim</h1>
-    <p>Computational Cognitive Psychology · Modeling · ML/DL</p>
-    <div class="contact-info">
-      <a href="mailto:haba6030@snu.ac.kr">haba6030@snu.ac.kr</a> |
-      <a href="CV_JinilKim(250809).pdf">CV_0922Updated</a>
+    <div class="wrap">
+      <img src="Profile.jpg" alt="Profile photo of Jinil Kim" class="profile" />
+      <h1>Jinil Kim</h1>
+      <p class="tagline">Computational Cognitive Psychology · Bayesian/RL Modeling · EEG/fMRI & Digital Phenotypes</p>
+      <div class="contacts">
+        <span class="pill"><a href="mailto:haba6030@snu.ac.kr">haba6030@snu.ac.kr</a></span>
+        <span class="pill"><a href="https://linkedin.com/in/jinilkimpotato" target="_blank" rel="noopener">LinkedIn</a></span>
+        <span class="pill"><a href="https://github.com/haba6030" target="_blank" rel="noopener">GitHub</a></span>
+        <span class="pill"><a href="CV_JinilKim(250809).pdf" target="_blank" rel="noopener">Download CV (PDF)</a></span>
+      </div>
     </div>
   </header>
 
-  <section>
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Computational Cognitive Psychology: Clarifying causal factors of happiness via decoding and measurement</li>
-    </ul>
-  </section>
+  <main>
+    <!-- Research Interests -->
+    <section>
+      <h2>Research Interests</h2>
+      <div class="card">
+        <ul class="bullets">
+          <li>Happiness & affective dynamics: RL/RLDDM and hierarchical Bayesian models for emotion & decision-making</li>
+          <li>Multimodal mental health modeling: EEG · behavior · app-based digital phenotypes</li>
+          <li>Computational psychiatry & neuroeconomics; reproducible pipelines for EEG/fMRI</li>
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <h2>Education</h2>
-    <div class="education">
-      <strong>Seoul National University</strong><br>
-      Major: Linguistics, Psychology, Computer Science<br>
-      GPA: 4.18 / 4.3<br>
-      Period: Mar. 2021 – (Jul. 2023 – Jan. 2025: Military Service)<br>
-      Relevant Courses: Clinical Neuropsychology, Brain-Mind-Behavior, Computational Linguistics
-    </div>
-  </section>
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="row">
+            <div><span class="title">Seoul National University</span> · Seoul, South Korea</div>
+            <div class="subtle">Mar 2021 – <span title="Expected Graduation">Feb 2027 (expected)</span></div>
+          </div>
+          <div class="kv"><span class="k">Degrees:</span><span>B.A. Linguistics & Psychology; B.S. Computer Science</span></div>
+          <div class="kv"><span class="k">GPA:</span><span>4.17 / 4.3</span></div>
+        </div>
+        <div class="card">
+          <div class="row">
+            <div><span class="title">The University of Hong Kong</span> · Hong Kong SAR</div>
+            <div class="subtle">Jun 2025 – Aug 2025</div>
+          </div>
+          <div>Summer Research Program, Faculty of Education</div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Research Experience</h2>
-    <div class="project">
-      <strong>How People Generate Narratives?</strong> – Seoul National University (Mar. – Jun. 2023)<br>
-      Investigated theoretical links between narrative production and comprehension using neural network literature review
-    </div>
-    <div class="project">
-      <strong>Development of Dependent Noun Termination Composition 'Deut'</strong> – SNU (Sep. – Dec. 2022)<br>
-      Compared modern and historical usage of 'Deut'; proposed revised definition and development process
-    </div>
-    <div class="project">
-      <strong>Effect of Practice Test Form on Essay Evaluation Results</strong> – SNU (Sep. – Dec. 2022)<br>
-      Designed and conducted experiment on open vs. closed book test formats on essay grading
-    </div>
-    <div class="project">
-      <strong>Learning Effects of Neologism’s Modulation Method</strong> – SNU (Sep. – Dec. 2021)<br>
-      Measured N400/P600 amplitude in response to neologisms using EEG and behavioral data
-    </div>
-  </section>
+    <!-- Research Experience -->
+    <section>
+      <h2>Research Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="row">
+            <div><span class="title">MIND Lab (Mental health, Internet, Neuroscience & Decision-making)</span> · University of Hong Kong</div>
+            <div class="subtle">Jun 2025 – Aug 2025</div>
+          </div>
+          <div class="subtle">Undergraduate Researcher (Advisor: Prof. Yuan-Wei Yao)</div>
+          <ul class="bullets">
+            <li>Built RL-diffusion decision models (RLDDM) to study emotion prediction error in social decision-making</li>
+            <li>Used hierarchical Bayesian modeling & logistic mixed-effects regression on time-pressured behavior</li>
+          </ul>
+        </div>
 
-  <section>
-    <h2>Grants</h2>
-    <div class="award"><strong>Megastudy Student Achievement Scholarship (18th)</strong>: Mar. 2021 – Mar. 2022</div>
-    <div class="award"><strong>Merit Scholarship</strong>: Mar. 2022, Sep. 2022, Mar. 2023</div>
-  </section>
+        <div class="card">
+          <div class="row">
+            <div><span class="title">Computational Clinical Science Lab</span> · Seoul National University</div>
+            <div class="subtle">Apr – Jun 2025; Sep 2025 –</div>
+          </div>
+          <div class="subtle">Undergraduate Research Assistant (Advisor: Dr. Woo-Young Ahn)</div>
+          <ul class="bullets">
+            <li>Integrated EEG, behavioral, and app-based phenotypes for mental-health risk modeling</li>
+            <li>Designed preprocessing pipelines and hierarchical models for individual differences</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Awards & Competitions</h2>
-    <div class="award"><strong>Cheonan City Data Analysis Idea Competition</strong> (Jul. 2024) – Urban development proposals using public data</div>
-    <div class="award"><strong>SNU Liberal Arts Competition – Grand Prize</strong> (Jul. 2023) – Interdisciplinary chatbot curriculum proposal</div>
-    <div class="award"><strong>Ambient AI Competition</strong> (Dec. 2022 – Jan. 2023)– Fashion recommendation using VGG16 + MLP</div>
-    <div class="award"><strong>SNU Multidisciplinary Essay Contest – Encouragement Prize</strong> (Apr. 2022)</div>
-  </section>
+    <!-- Poster / Presentations -->
+    <section>
+      <h2>Presentations</h2>
+      <div class="card">
+        <ul class="bullets">
+          <li><strong>Kim, J.</strong>, &amp; Yao, Y. W. (Aug 2025). <em>Why Do Depressed Individuals Punish?: A Computational Investigation of Emotion Learning and Bias in Maladaptive Social Behavior</em>. Poster, SRP Poster Session, University of Hong Kong.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <h2>Leadership & Projects</h2>
-    <div class="leadership">
-      <strong>SNUMentalCare, Student Council Program (President)</strong> – Sep. 2021 – Jul. 2023<br>
-      Organized campus-wide mental health programs in collaboration with SNU Campus Life & Culture
-    </div>
-  </section>
+    <!-- Coursework-based Research (Selected) -->
+    <section>
+      <h2>Coursework-Based Research (Selected)</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="row"><div class="title">Happiness Project: Modeling Affective Dynamics</div><div class="subtle">Mar – Jun 2025</div></div>
+          <div class="subtle">Seminar for Experimental Psychology (Computational Modeling), SNU · Advisor: Dr. Woo-Young Ahn</div>
+          <ul class="bullets">
+            <li>Modeled interactions between reward prediction error and affect (MLE vs. individual vs. HBM)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">How People Generate Narratives?</div><div class="subtle">Mar – Jun 2023</div></div>
+          <div class="subtle">Clinical Neuropsychology & Experiment, SNU · Advisor: Dr. JeanYung Chey</div>
+          <ul class="bullets">
+            <li>Linked narrative production/comprehension with neural networks & brain regions (lit. review)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Dependent Noun Termination “Deut” (Historical Development)</div><div class="subtle">Sep – Dec 2022</div></div>
+          <div class="subtle">Historical Comparative Linguistics, SNU · Advisor: Dr. SangChul Park</div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Practice Test Form & Essay Evaluation (Open vs. Closed-book)</div><div class="subtle">Sep – Dec 2022</div></div>
+          <div class="subtle">Intro to Experimental Psychology & Lab, SNU · Advisor: Dr. JooYong Park</div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Learning Effects of Neologism Modulation (EEG/Behavior)</div><div class="subtle">Sep – Dec 2021</div></div>
+          <div class="subtle">Language & the Mind, SNU · Advisor: Dr. SungEun Lee</div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <strong>Languages:</strong> Korean (Native), English (Full Professional), French (Beginner)<br>
-      <strong>Programming:</strong> Python, Java, C, C++<br>
-      <strong>Data Analysis:</strong> R<br>
-      <strong>Tools:</strong> Praat<br>
-      <strong>Instrument:</strong> <a href="https://www.instagram.com/drum_jini/">Drum (Instagram)</a>
-    </div>
-  </section>
+    <!-- Honors & Awards -->
+    <section>
+      <h2>Honors & Awards</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="row"><div class="title">Humanity 100 Years Undergraduate Scholarship</div><div class="subtle">Mar 2025 – Jul 2026</div></div>
+          <div class="subtle">Korea Student Aid Foundation · 17,000,000 KRW (~$12,500)</div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">HKU Foundation for Educational Development & Research Scholarship</div><div class="subtle">Jun – Aug 2025</div></div>
+          <div class="subtle">HKD 10,000</div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Grand Prize · SNU Liberal Arts Competition</div><div class="subtle">Jul 2023</div></div>
+          <div class="subtle">Interdisciplinary exploration with chatbots</div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Megastudy Student Achievement Scholarship</div><div class="subtle">Mar 2021 – Mar 2022</div></div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Superior Academic Performance Scholarship</div><div class="subtle">Mar 2022; Sep 2022; Mar 2023</div></div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Encouragement Prize · SNU Multidisciplinary Essay Contest</div><div class="subtle">Apr 2022</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitions -->
+    <section>
+      <h2>Competitions</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="row"><div class="title">Cheonan City Data Analysis Idea Competition</div><div class="subtle">Jul – Aug 2024</div></div>
+          <div>Policy proposals for youth infrastructure & urban development</div>
+        </div>
+        <div class="card">
+          <div class="row"><div class="title">Ambient AI Competition</div><div class="subtle">Dec 2022 – Jan 2023</div></div>
+          <div>Fashion recommendation AI: VGG16 feature extraction + fine-tuned MLP</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>Skills</h2>
+      <div class="card">
+        <ul class="bullets">
+          <li><strong>Statistical Modeling:</strong> Bayesian modeling, GLMM, RL, RLDDM, Logistic Mixed-Effects Regression</li>
+          <li><strong>Programming:</strong> Python, R, C++, Java, Stan, MATLAB</li>
+          <li><strong>Data Handling:</strong> EEG, behavioral, fMRI, app-based digital phenotype data</li>
+          <li><strong>Linguistics Tools:</strong> Praat</li>
+          <li><strong>Languages:</strong> Korean (Native), English (Full Professional), French (Beginner)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Jinil Kim
