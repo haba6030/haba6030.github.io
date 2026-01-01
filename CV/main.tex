@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=black}
+\setlist[itemize]{nosep,leftmargin=1.2em}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{0.28\textwidth}}
+
+\newcommand{\orgrow}[2]{%
+  \begin{tabularx}{\textwidth}{@{}L R@{}}%
+  \textbf{#1} & #2\\
+  \end{tabularx}
+}
+\newcommand{\rolerow}[2]{%
+  \begin{tabularx}{\textwidth}{@{}L R@{}}%
+  #1 & #2\\
+  \end{tabularx}\vspace{0.15em}
+}
+\newcommand{\cvsection}[1]{%
+  \vspace{0.9em}
+  {\large\bfseries\MakeUppercase{#1}}\par
+  \vspace{0.15em}\hrule height 0.6pt \vspace{0.4em}
+}
+\newcommand{\cvname}[1]{\vspace{-0.2em}{\LARGE\bfseries #1}\par\vspace{0.3em}}
+\newcommand{\cvline}[1]{#1\par}
+
+\begin{document}
+
+% ===== Header =====
+\cvname{Jinil Kim}
+\cvline{\href{mailto:haba6030@snu.ac.kr}{haba6030@snu.ac.kr} \quad | \quad +82-10-5264-9444 \quad| \quad Seoul, Korea } 
+\cvline{LinkedIn: \url{linkedin.com/in/jinilkimpotato/} \quad | \quad GitHub: \url{github.com/haba6030}}
+
+% ===== Research Interest =====
+\cvsection{Research Interest}
+Clarifying causal factors of individual difference via Neuro-Decoding and Computational Modeling
+
+% ===== Education =====
+\cvsection{Education}
+\orgrow{Seoul National University}{Seoul, South Korea}
+\rolerow{B.A. in Linguistics, B.A. in Psychology, B.S. in Computer Science}{Mar 2021 -- Exp. Feb 2027}
+GPA: 4.17 / 4.3 \quad | \quad Major (4.0): Ling./Psych.: 4.00, CS: 3.82\\
+
+\orgrow{The University of Hong Kong}{Hong Kong SAR}
+\rolerow{Summer Research Program, Faculty of Psychology}{Jun 2025 -- Aug 2025}
+
+% ===== Research Experience =====
+\cvsection{Research Experience}
+\orgrow{Mental health, Internet, Neuroscience \& Decision-making Lab}{University of Hong Kong}
+\rolerow{Undergraduate Researcher \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Aug 2025}
+\begin{itemize}
+  \item Developed and compared hierarchical Bayesian RL--DDM variants to model emotion and reward prediction errors in social decision-making.
+  \item Introduced a time-varying Drift Diffusion Model (tDDM) to study how emotion-based and reward-based prediction errors dynamically shape social decision-making
+\end{itemize}
+
+\orgrow{Computational Clinical Science Laboratory}{Seoul National University}
+\rolerow{Undergraduate RA \ \ (Advisor: Dr.\ Woo-Young Ahn)}{Apr -- Jun 2025; Sep 2025 -- }
+\begin{itemize}
+  \item Implemented RL-based behavioral models to dissociate stable trait parameters from dynamic state-dependent fluctuations.
+  \item Contributed to a multimodal project integrating EEG, behavioral, and app-based digital phenotype data for mental health risk modeling.
+\end{itemize}
+
+% ===== Ongoing Projects =====
+\cvsection{Ongoing Projects}
+\textbf{Development of a Personalized Color Vision Correction Display Filter Using fMRI-Based Neural Responses and Deep Learning}\\
+\rolerow{Project Lead}{Apr 2025 -- Present}
+\begin{itemize}
+  \item Applied ROI-based decoding, forward encoding models, and Procrustes alignment to identify individual-specific neural color spaces.
+  \item Designed the full research pipeline: experiment design, data preprocessing, neural modeling, and optimization-based filter generation.
+  \item Funded by SNU Undergraduate Research Grant (KRW 5,000,000).
+\end{itemize}
+
+\textbf{Time-Varying Drift Diffusion Modeling of Emotion and Reward in Depression}\\
+\rolerow{Project Lead}{Jun 2025 -- Present}
+\begin{itemize}
+  \item Introduced a time-varying Drift Diffusion Model (tDDM) to study how emotion-based and reward-based prediction errors dynamically shape social decision-making
+\end{itemize}
+
+% ===== Poster Presentations =====
+\cvsection{Poster Presentations}
+\begin{itemize}
+  \item Kim, Jinil, Yao, Y. W. (Aug 2025). \textit{Why Do Depressed Individuals Punish?: A Computational Investigation of Emotion Learning and Bias in Maladaptive Social Behavior.} Poster presented at the Summer Research Program Poster Session, University of Hong Kong.
+\end{itemize}
+
+% ===== Honors & Awards =====
+\cvsection{Honors \& Awards}
+\orgrow{Humanity 100 Years Undergraduate Scholarship}{Korea Student Aid Foundation}
+\rolerow{Amount: KRW 17{,}000{,}000 (USD 12{,}500)}{Mar 2025 -- Jul 2026}
+
+
+\orgrow{The University of Hong Kong Foundation for Educational Development and Research Scholarship}{The University of Hong Kong}
+\rolerow{Amount: HKD 10{,}000 (USD 1{,}284)}{Jun 2025 -- Aug 2025}
+
+\orgrow{Grand prize in SNU Liberal Arts Competition}{Seoul National University}
+\rolerow{Title: \textit{Interdisciplinary exploration with chatbots}}{Jul 2023}
+
+\orgrow{Megastudy Student Achievement Scholarship}{MegaStudy}
+\rolerow{Amount: KRW 3{,}000{,}000 (USD 2{,}000)}{Mar 2021 -- Mar 2022}
+
+\orgrow{Superior Academic Performance scholarship}{Seoul National University}
+\rolerow{}{Mar 2022, 2023; Sep 2022}
+
+% ===== Competitions =====
+\cvsection{Competitions}
+
+\orgrow{Ambient AI Competition}{Seoul National University}
+\rolerow{Project: \textit{Fashion Recommendation AI}}{Dec 2022 -- Jan 2022}
+\begin{itemize}
+  \item Vectorized fashion dataset and extracted feature from image input by using VGG16 model. 
+  \item Finetuned MLP Model for recommendation
+\end{itemize}
+
+% ===== Skills =====
+\cvsection{Skills}
+\textbf{Computational Modeling:} Bayesian hierarchical models, RL, DDM, RLDDM, mixed-effects models\\
+\textbf{Neuroimaging:} fMRI preprocessing, ROI-based decoding, forward encoding models, EEG connectivity analysis\\
+\textbf{Programming:} Python, R, Stan, C++, Java\\
+\textbf{ML \& Data:} Deep learning (MLP, CNN), high-dimensional time-series, multimodal data integration\\
+
+% ===== Languages =====
+\cvsection{Languages}
+Korean (Native), \ \ English (Full Professional Proficiency), \ \ French (Beginner)
+
+\end{document}
