@@ -19,6 +19,7 @@
 
 # LaTeX source files (optional - uncomment if you want to exclude .tex)
 # *.tex
+CV/references/
 
 # Hidden files and folders
 .*

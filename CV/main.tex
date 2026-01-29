@@ -4,7 +4,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 
-\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage[
+  a4paper,
+  left=1.4cm,
+  right=1.4cm,
+  top=2.2cm,
+  bottom=2.2cm
+]{geometry}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.25em}
 
@@ -16,16 +22,17 @@
 \setlist[itemize]{nosep,leftmargin=1.2em}
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}p{0.28\textwidth}}
 
-\newcommand{\orgrow}[2]{%
+\newcommand{\orgrow}[3][0.28]{%
+  \newcolumntype{R}{>{\raggedleft\arraybackslash}p{#1\textwidth}}%
   \begin{tabularx}{\textwidth}{@{}L R@{}}%
-  \textbf{#1} & #2\\
+  \textbf{#2} & #3\\
   \end{tabularx}
 }
-\newcommand{\rolerow}[2]{%
+\newcommand{\rolerow}[3][0.28]{%
+  \newcolumntype{R}{>{\raggedleft\arraybackslash}p{#1\textwidth}}%
   \begin{tabularx}{\textwidth}{@{}L R@{}}%
-  #1 & #2\\
+  #2 & #3\\
   \end{tabularx}\vspace{0.15em}
 }
 \newcommand{\cvsection}[1]{%
@@ -40,94 +47,96 @@
 
 % ===== Header =====
 \cvname{Jinil Kim}
-\cvline{\href{mailto:haba6030@snu.ac.kr}{haba6030@snu.ac.kr} \quad | \quad +82-10-5264-9444 \quad| \quad Seoul, Korea } 
-\cvline{LinkedIn: \url{linkedin.com/in/jinilkimpotato/} \quad | \quad GitHub: \url{github.com/haba6030}}
+\cvline{\href{mailto:haba6030@snu.ac.kr}{haba6030@snu.ac.kr} \quad | \quad Homepage: \url{https://haba6030.github.io/} \quad | \quad GitHub: \url{github.com/haba6030}}
 
 % ===== Research Interest =====
 \cvsection{Research Interest}
-Clarifying causal factors of individual difference via Neuro-Decoding and Computational Modeling
-
+\begin{itemize}
+ \item Clarifying causal factors of individual differences via computational modeling of brain-behavior dynamics
+ \item Translational neuromodeling for diagnosis, intervention, and brain-inspired computing
+\end{itemize}
 % ===== Education =====
 \cvsection{Education}
 \orgrow{Seoul National University}{Seoul, South Korea}
-\rolerow{B.A. in Linguistics, B.A. in Psychology, B.S. in Computer Science}{Mar 2021 -- Exp. Feb 2027}
-GPA: 4.18 / 4.3 \quad | \quad Major (4.0): Ling./Psych.: 4.00, CS: 3.82\\
+\rolerow{B.A. Linguistics · B.A. Psychology · B.S. Computer Science}{Mar 2021 -- Exp. Feb 2027}
+GPA: 4.18 / 4.3 (3.96 / 4.0)\quad |\quad Major GPA (4.0): Ling./Psych.: 4.00, CS: 3.82\\
+{\footnotesize * Mandatory military service, Jul 2023 -- Jan 2025}
 
 \orgrow{The University of Hong Kong}{Hong Kong SAR}
 \rolerow{Summer Research Program, Faculty of Psychology}{Jun 2025 -- Aug 2025}
+\vspace{-0.4em}
 
 % ===== Research Experience =====
 \cvsection{Research Experience}
 \orgrow{Mental health, Internet, Neuroscience \& Decision-making Lab}{University of Hong Kong}
-\rolerow{Undergraduate Researcher \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Aug 2025}
+\rolerow{Visiting Researcher \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Aug 2025}
 \begin{itemize}
-  \item Developed and compared hierarchical Bayesian RL--DDM variants to model emotion and reward prediction errors in social decision-making.
-  \item Introduced a time-varying Drift Diffusion Model (tDDM) to study how emotion-based and reward-based prediction errors dynamically shape social decision-making
+  \item Developed a time-varying Drift Diffusion Model (tDDM) to investigate the hierarchical influence of emotion and reward prediction errors in social decision-making  
 \end{itemize}
+\vspace{0.5em}
 
 \orgrow{Computational Clinical Science Laboratory}{Seoul National University}
-\rolerow{Undergraduate RA \ \ (Advisor: Dr.\ Woo-Young Ahn)}{Apr -- Jun 2025; Sep 2025 -- }
+\rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Woo-Young Ahn)}{Apr -- Jun 2025; Sep 2025 -- }
 \begin{itemize}
-  \item Implemented RL-based behavioral models to dissociate stable trait parameters from dynamic state-dependent fluctuations.
-  \item Contributed to a multimodal project integrating EEG, behavioral, and app-based digital phenotype data for mental health risk modeling.
+  \item Developed an Adversarial Inverse Reinforcement Learning (AIRL) model with interpretable parameters to capture individual differences in decision policies.
+  \item Designed a hierarchical multimodal model integrating EEG, behavioral, and app-based digital phenotype data to predict alcohol craving.
 \end{itemize}
-
 % ===== Ongoing Projects =====
 \cvsection{Ongoing Projects}
 \textbf{Development of a Personalized Color Vision Correction Display Filter Using fMRI-Based Neural Responses and Deep Learning}\\
-\rolerow{Project Lead}{Apr 2025 -- Present}
+\rolerow{Project Lead\ \ (Advisor: Prof.\ Jiook Cha)}{Apr 2025 -- Present}
 \begin{itemize}
-  \item Applied ROI-based decoding, forward encoding models, and Procrustes alignment to identify individual-specific neural color spaces.
   \item Designed the full research pipeline: experiment design, data preprocessing, neural modeling, and optimization-based filter generation.
-  \item Funded by SNU Undergraduate Research Grant (KRW 5,000,000).
+ \item Analyzed inter-individual coherence and disparity of individuals with color vision deficiencies in neural color geometry using Procrustes alignment.
+  \item Funded by SNU Undergraduate Research Grant (\$3,500).
 \end{itemize}
+\vspace{0.5em}
 
-\textbf{Time-Varying Drift Diffusion Modeling of Emotion and Reward in Depression}\\
-\rolerow{Project Lead}{Jun 2025 -- Present}
+\textbf{Inference of Latent Planning Depth in Human Pedestrian Navigation Using Planning-Aware Inverse Reinforcement Learning}\\
+\rolerow{Research Analyst\ \ (Advisor: Prof.\ Woo-Young Ahn)}{Sep 2025 -- Present}
 \begin{itemize}
-  \item Introduced a time-varying Drift Diffusion Model (tDDM) to study how emotion-based and reward-based prediction errors dynamically shape social decision-making
+  \item Developing a planning-aware inverse reinforcement learning framework to infer latent planning depth from human sequential decision-making.
 \end{itemize}
+\vspace{0.5em}
+
+\textbf{A Time-Varying Drift Diffusion Model of Emotion and Reward Prediction Errors in Depression}\\
+\rolerow{Project Lead\ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Present}
+\begin{itemize}
+  \item Developed a time-varying Drift Diffusion Model (tDDM) to investigate the hierarchical influence of emotion and reward prediction errors in social decision-making  
+\end{itemize}
+\vspace{1em}
 
 % ===== Poster Presentations =====
 \cvsection{Poster Presentations}
-\begin{itemize}
+\begin{itemize}[itemsep=0.4em]
+    \item Kim, Jinil, Cho, M., Seo, J., Cha, J. (Under review). \textit{fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency.} Poster submitted to the 2026 Organization for Human Brain Mapping (OHBM) Annual Meeting, Bordeaux, France.
+    \vspace{0.5em}
   \item Kim, Jinil, Yao, Y. W. (Aug 2025). \textit{Why Do Depressed Individuals Punish?: A Computational Investigation of Emotion Learning and Bias in Maladaptive Social Behavior.} Poster presented at the Summer Research Program Poster Session, University of Hong Kong.
 \end{itemize}
+\vspace{0.5em}
 
 % ===== Honors & Awards =====
 \cvsection{Honors \& Awards}
-\orgrow{Humanity 100 Years Undergraduate Scholarship}{Korea Student Aid Foundation}
-\rolerow{Amount: KRW 17{,}000{,}000 (USD 12{,}500)}{Mar 2025 -- Jul 2026}
 
+\orgrow[0.15]{Best Poster Award in SNU Undergrad Research Program (4th Place)}{Jan 2026}
+\orgrow[0.15]{SNU Liberal Arts Competition (1st Place)}{Jul 2023}
 
-\orgrow{The University of Hong Kong Foundation for Educational Development and Research Scholarship}{The University of Hong Kong}
-\rolerow{Amount: HKD 10{,}000 (USD 1{,}284)}{Jun 2025 -- Aug 2025}
+% ===== Grants =====
+\cvsection{Grants}
+\orgrow[0.24]{KOSAF Humanity 100 Years Undergraduate Scholarship}{Mar 2025 -- Jul 2026}
+\rolerow[0.24]{Amount: \$12{,}500 (KRW 17{,}000{,}000)}{}
 
-\orgrow{Grand prize in SNU Liberal Arts Competition}{Seoul National University}
-\rolerow{Title: \textit{Interdisciplinary exploration with chatbots}}{Jul 2023}
+\orgrow[0.24]{The University of Hong Kong Foundation for Educational Development and Research Scholarship}{Jun 2025 -- Aug 2025}
+\orgrow[0.24]{Amount: \$1{,}300 (HKD 10{,}000)}{}
 
-\orgrow{Megastudy Student Achievement Scholarship}{MegaStudy}
-\rolerow{Amount: KRW 3{,}000{,}000 (USD 2{,}000)}{Mar 2021 -- Mar 2022}
-
-\orgrow{Superior Academic Performance scholarship}{Seoul National University}
-\rolerow{}{Mar 2022, 2023; Sep 2022}
-
-% ===== Competitions =====
-\cvsection{Competitions}
-
-\orgrow{Ambient AI Competition}{Seoul National University}
-\rolerow{Project: \textit{Fashion Recommendation AI}}{Dec 2022 -- Jan 2022}
-\begin{itemize}
-  \item Vectorized fashion dataset and extracted feature from image input by using VGG16 model. 
-  \item Finetuned MLP Model for recommendation
-\end{itemize}
+\orgrow[0.24]{Superior Academic Performance scholarship}{Mar 2022, 2023; Sep 2022}
 
 % ===== Skills =====
 \cvsection{Skills}
-\textbf{Computational Modeling:} Bayesian hierarchical models, RL, DDM, RLDDM, mixed-effects models\\
-\textbf{Neuroimaging:} fMRI preprocessing, ROI-based decoding, forward encoding models, EEG connectivity analysis\\
+\textbf{Computational Modeling:} Bayesian hierarchical models, Reinforcement Learning\\
+\textbf{Neuroimaging:} fMRI preprocessing, Neural decoding\\
 \textbf{Programming:} Python, R, Stan, C++, Java\\
-\textbf{ML \& Data:} Deep learning (MLP, CNN), high-dimensional time-series, multimodal data integration\\
+\textbf{ML \& Data:} Deep learning (MLP, CNN), high-dimensional time-series\\
 
 % ===== Languages =====
 \cvsection{Languages}
