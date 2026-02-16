@@ -13,220 +13,527 @@
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); margin:0}
     a{color:var(--brand-2); text-decoration:none}
     a:hover{text-decoration:underline}
-    header{background:linear-gradient(135deg,#012446 0%, #0f5ea8 100%); color:#fff; text-align:center; padding:3rem 1rem 2rem}
-    header .wrap{max-width:1000px; margin:0 auto}
-    img.profile{border-radius:50%; width:132px; height:132px; object-fit:cover; border:3px solid rgba(255,255,255,.7); box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    h1{margin:.75rem 0 .25rem 0; font-size:2rem; letter-spacing:.2px}
-    .tagline{margin:0; color:#e6eef7}
-    .contacts{margin-top:1rem; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center}
-    .pill{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; padding:.45rem .75rem; border-radius:999px; display:inline-flex; gap:.4rem; align-items:center}
-    .pill a{color:#fff; text-decoration:none}
-    .pill a:focus, .pill a:hover{text-decoration:underline}
-    main{max-width:1000px; margin:0 auto; padding:2rem 1rem 3rem}
-    section{margin-bottom:1.25rem}
-    h2{color:var(--brand); font-size:1.35rem; margin:0 0 .75rem 0}
-    .grid{display:grid; grid-template-columns:1fr; gap:12px}
-    @media (min-width:760px){ .grid-2{grid-template-columns:1fr 1fr} }
-    .card{background:var(--card); border-radius:12px; padding:1rem 1.1rem; box-shadow:0 2px 10px rgba(5,18,46,.06)}
-    .row{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
-    .title{font-weight:700}
-    .subtle{color:var(--muted)}
-    .bullets{margin:.45rem 0 0 1.1rem}
-    .bullets li{margin:.15rem 0}
-    .kv{display:flex; gap:.5rem; flex-wrap:wrap}
-    .kv .k{color:var(--muted)}
-    footer{color:#9ca3af; font-size:.9rem; text-align:center; padding:1.5rem}
-    .btn{display:inline-block; background:#fff; color:var(--brand-2); border:1px solid #cfe2ff; padding:.5rem .75rem; border-radius:10px}
-    .btn:hover{text-decoration:none; background:#f3f9ff}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .page-container {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      background: linear-gradient(135deg, #012446 0%, #0f5ea8 100%);
+      color: #fff;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sidebar-header {
+      text-align: center;
+    }
+
+    img.profile-rect {
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid rgba(255,255,255,.7);
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar h1 {
+      margin: 0.5rem 0 0.25rem 0;
+      font-size: 1.75rem;
+      letter-spacing: .2px;
+      color: #fff;
+    }
+
+    .sidebar .affiliation {
+      color: #e6eef7;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-contact-item {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .sidebar-contact-item a {
+      color: #fff;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .sidebar-contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar-nav {
+      margin-top: 1rem;
+    }
+
+    .sidebar-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-nav li {
+      margin: 0;
+    }
+
+    .sidebar-nav a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-nav a:hover {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a.active {
+      background: rgba(255,255,255,.2);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      scroll-margin-top: 20px;
+    }
+
+    h2 {
+      color: var(--brand);
+      font-size: 1.5rem;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--brand-2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width:760px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 2px 10px rgba(5,18,46,.06);
+    }
+
+    .research-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 10px rgba(5,18,46,.06);
+    }
+
+    .research-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    }
+
+    .research-content {
+      min-width: 0;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-weight: 700;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .members {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtle {
+      color: var(--muted);
+    }
+
+    .bullets {
+      margin: .45rem 0 0 1.1rem;
+    }
+
+    .bullets li {
+      margin: .15rem 0;
+    }
+
+    .presentations {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .presentations-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--brand);
+      margin-bottom: 0.4rem;
+    }
+
+    .kv {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .kv .k {
+      color: var(--muted);
+    }
+
+    footer {
+      color: #9ca3af;
+      font-size: .9rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: var(--brand-2);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .page-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+        height: auto;
+      }
+      .research-card {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <img src="Profile.jpg" alt="Profile photo of Jinil Kim" class="profile" />
-      <h1>Jinil Kim</h1>
-      <!-- <p class="tagline">Computational Cognitive Psychology · Bayesian/RL Modeling · EEG/fMRI & Digital Phenotypes</p> -->
-      <div class="contacts">
-        <span class="pill"><a href="mailto:haba6030@snu.ac.kr">haba6030@snu.ac.kr</a></span>
-        <span class="pill"><a href="https://linkedin.com/in/jinilkimpotato" target="_blank" rel="noopener">LinkedIn</a></span>
-        <span class="pill"><a href="https://github.com/haba6030" target="_blank" rel="noopener">GitHub</a></span>
-        <span class="pill"><a href="cv/main.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></span>
+  <div class="page-container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="images/profile-rect.jpg" alt="Profile photo of Jinil Kim" class="profile-rect" />
+        <h1>Jinil Kim</h1>
+        <p class="affiliation">Seoul National University</p>
       </div>
+
+      <div class="sidebar-contacts">
+        <div class="sidebar-contact-item">
+          <a href="mailto:haba6030@snu.ac.kr">haba6030@snu.ac.kr</a>
+        </div>
+        <div class="sidebar-contact-item">
+          <a href="https://linkedin.com/in/jinilkimpotato" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="sidebar-contact-item">
+          <a href="https://github.com/haba6030" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="sidebar-contact-item">
+          <a href="CV/main.pdf" target="_blank" rel="noopener">CV (Feb. 2026)</a>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#honors">Honors and Awards</a></li>
+          <li><a href="#scholarships">Scholarships</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#experiences">Research Experiences</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div>
+      <main>
+        <!-- About Me -->
+        <section id="about">
+          <h2>About Me</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li>Clarifying causal factors of individual differences via computational modeling of brain-behavior dynamics</li>
+              <li>Translational neuromodeling for diagnosis, intervention, and brain-inspired computing</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+          <h2>Education</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row">
+                <div><span class="title">Seoul National University</span> · Seoul, South Korea</div>
+                <div class="subtle">Mar 2021 – <span title="Expected Graduation">Exp. Feb 2027</span></div>
+              </div>
+              <div class="kv"><span class="k">Degrees:</span><span>B.A. Linguistics · B.A. Psychology · B.S. Computer Science</span></div>
+              <div class="kv"><span class="k">GPA:</span><span>4.18 / 4.3 (3.96 / 4.0)</span></div>
+              <div class="kv"><span class="k">Major GPA (4.0):</span><span>Ling./Psych.: 4.00, CS: 3.82</span></div>
+              <div class="subtle" style="margin-top:0.5rem">* Mandatory military service, Jul 2023 – Jan 2025</div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div><span class="title">The University of Hong Kong</span> · Hong Kong SAR</div>
+                <div class="subtle">Jun 2025 – Aug 2025</div>
+              </div>
+              <div>Summer Research Program, Faculty of Psychology</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research">
+          <h2>Research</h2>
+          <div class="grid">
+            <!-- Project 1: Color Vision -->
+            <div class="research-card">
+              <a href="images/color-vision.png" target="_blank">
+                <img src="images/color-vision.png" alt="Color Vision fMRI Study" />
+              </a>
+              <div class="research-content">
+                <div class="row">
+                  <div class="project-title">Development of a Personalized Color Vision Correction Display Filter Using fMRI-Based Neural Responses and Deep Learning</div>
+                  <div class="subtle">Apr 2025 – Present</div>
+                </div>
+                <div class="members">Project Lead (Advisor: Prof. Jiook Cha)</div>
+                <ul class="bullets">
+                  <li>Designed the full research pipeline: experiment design, data preprocessing, neural modeling, and optimization-based filter generation.</li>
+                  <li>Analyzed inter-individual coherence and disparity of individuals with color vision deficiencies in neural color geometry using Procrustes alignment.</li>
+                  <li>Funded by SNU Undergraduate Research Grant ($3,500).</li>
+                </ul>
+                <div class="presentations">
+                  <div class="presentations-title">Presentations</div>
+                  <ul class="bullets">
+                    <li><strong>Kim, Jinil</strong>, Cho, M., Seo, J., Cha, J. (Jun 2026). <em>fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency</em>. Poster accepted for presentation at the 2026 Organization for Human Brain Mapping (OHBM) Annual Meeting, Bordeaux, France.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Planning IRL -->
+            <div class="research-card">
+              <a href="images/planning-irl.png" target="_blank">
+                <img src="images/planning-irl.png" alt="Planning IRL Navigation" />
+              </a>
+              <div class="research-content">
+                <div class="row">
+                  <div class="project-title">Inference of Latent Planning Depth in Human Pedestrian Navigation Using Planning-Aware Inverse Reinforcement Learning</div>
+                  <div class="subtle">Sep 2025 – Present</div>
+                </div>
+                <div class="members">Research Analyst (Advisor: Prof. Woo-Young Ahn)</div>
+                <ul class="bullets">
+                  <li>Developing a planning-aware inverse reinforcement learning framework to infer latent planning depth from human sequential decision-making.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Project 3: tDDM -->
+            <div class="research-card">
+              <a href="images/tddm.png" target="_blank">
+                <img src="images/tddm.png" alt="tDDM Emotion and Reward" />
+              </a>
+              <div class="research-content">
+                <div class="row">
+                  <div class="project-title">A Time-Varying Drift Diffusion Model of Emotion and Reward Prediction Errors in Depression</div>
+                  <div class="subtle">Jun 2025 – Present</div>
+                </div>
+                <div class="members">Project Lead (Advisor: Prof. Yuan-Wei Yao)</div>
+                <ul class="bullets">
+                  <li>Developing a time-varying Drift Diffusion Model (tDDM) to investigate the hierarchical influence of emotion and reward prediction errors in social decision-making</li>
+                </ul>
+                <div class="presentations">
+                  <div class="presentations-title">Presentations</div>
+                  <ul class="bullets">
+                    <li><strong>Kim, Jinil</strong>, Yao, Y. W. (Aug 2025). <em>Why Do Depressed Individuals Punish?: A Computational Investigation of Emotion Learning and Bias in Maladaptive Social Behavior</em>. Poster presented at the Summer Research Program Poster Session, University of Hong Kong.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Scholarships -->
+        <section id="scholarships">
+          <h2>Scholarships</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row"><div class="title">KOSAF Humanity 100 Years Undergraduate Scholarship</div><div class="subtle">Mar 2025 – Jul 2026</div></div>
+              <div class="subtle">Amount: $12,500 (KRW 17,000,000)</div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">The University of Hong Kong Foundation for Educational Development and Research Scholarship</div><div class="subtle">Jun 2025 – Aug 2025</div></div>
+              <div class="subtle">Amount: $1,300 (HKD 10,000)</div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">Superior Academic Performance scholarship</div><div class="subtle">Mar 2022, 2023; Sep 2022</div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Honors & Awards -->
+        <section id="honors">
+          <h2>Honors and Awards</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="row"><div class="title">Best Poster Award in SNU Undergrad Research Program (4th Place)</div><div class="subtle">Jan 2026</div></div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">SNU Liberal Arts Competition (1st Place)</div><div class="subtle">Jul 2023</div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Teaching -->
+        <section id="teaching">
+          <h2>Teaching</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row">
+                <div><span class="title">Teaching Assistant, Basic Computing (English)</span> · Seoul National University</div>
+                <div class="subtle">Mar 2026</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div><span class="title">Teaching Assistant, Basic Computing (Korean)</span> · Seoul National University</div>
+                <div class="subtle">Sep 2025</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Research Experiences -->
+        <section id="experiences">
+          <h2>Research Experiences</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row">
+                <div><span class="title"><a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">Computational Clinical Science Laboratory</a></span> · Seoul National University</div>
+                <div class="subtle">Apr – Jun 2025; Sep 2025 –</div>
+              </div>
+              <div class="subtle">Undergraduate RA (Advisor: Prof. Woo-Young Ahn)</div>
+              <ul class="bullets">
+                <li>Developed an Adversarial Inverse Reinforcement Learning (AIRL) model with interpretable parameters to capture individual differences in decision policies.</li>
+                <li>Designed a hierarchical multimodal model integrating EEG, behavioral, and app-based digital phenotype data to predict alcohol craving.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="row">
+                <div><span class="title"><a href="https://psychology.hku.hk/people/yuanwei_yao/" target="_blank" rel="noopener">Mental health, Internet, Neuroscience & Decision-making Lab</a></span> · University of Hong Kong</div>
+                <div class="subtle">Jun 2025 – Aug 2025</div>
+              </div>
+              <div class="subtle">Visiting Researcher (Advisor: Prof. Yuan-Wei Yao)</div>
+              <ul class="bullets">
+                <li>Developed a time-varying Drift Diffusion Model (tDDM) to investigate the hierarchical influence of emotion and reward prediction errors in social decision-making</li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        &copy; 2026 Jinil Kim
+      </footer>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <!-- Research Interest -->
-    <section>
-      <h2>Research Interest</h2>
-      <div class="card">
-        <ul class="bullets">
-          <li>Clarifying causal factors of individual differences via computational modeling of brain-behavior dynamics</li>
-          <li>Translational neuromodeling for diagnosis, intervention, and brain-inspired computing</li>
-        </ul>
-      </div>
-    </section>
+  <script>
+    // Intersection Observer for active navigation highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
 
-    <!-- Education -->
-    <section>
-      <h2>Education</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="row">
-            <div><span class="title">Seoul National University</span> · Seoul, South Korea</div>
-            <div class="subtle">Mar 2021 – <span title="Expected Graduation">Exp. Feb 2027</span></div>
-          </div>
-          <div class="kv"><span class="k">Degrees:</span><span>B.A. Linguistics · B.A. Psychology · B.S. Computer Science</span></div>
-          <div class="kv"><span class="k">GPA:</span><span>4.18 / 4.3 (3.96 / 4.0)</span></div>
-          <div class="kv"><span class="k">Major GPA (4.0):</span><span>Ling./Psych.: 4.00, CS: 3.82</span></div>
-          <div class="subtle" style="margin-top:0.5rem">* Mandatory military service, Jul 2023 – Jan 2025</div>
-        </div>
-        <div class="card">
-          <div class="row">
-            <div><span class="title">The University of Hong Kong</span> · Hong Kong SAR</div>
-            <div class="subtle">Jun 2025 – Aug 2025</div>
-          </div>
-          <div>Summer Research Program, Faculty of Psychology</div>
-        </div>
-      </div>
-    </section>
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
 
-    <!-- Research Experience -->
-    <section>
-      <h2>Research Experience</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="row">
-            <div><span class="title">Mental health, Internet, Neuroscience & Decision-making Lab</span> · University of Hong Kong</div>
-            <div class="subtle">Jun 2025 – Aug 2025</div>
-          </div>
-          <div class="subtle">Visiting Researcher (Advisor: Prof. Yuan-Wei Yao)</div>
-          <ul class="bullets">
-            <li>Developed a time-varying Drift Diffusion Model (tDDM) to investigate the hierarchical influence of emotion and reward prediction errors in social decision-making</li>
-          </ul>
-        </div>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
 
-        <div class="card">
-          <div class="row">
-            <div><span class="title">Computational Clinical Science Laboratory</span> · Seoul National University</div>
-            <div class="subtle">Apr – Jun 2025; Sep 2025 –</div>
-          </div>
-          <div class="subtle">Undergraduate RA (Advisor: Prof. Woo-Young Ahn)</div>
-          <ul class="bullets">
-            <li>Developed an Adversarial Inverse Reinforcement Learning (AIRL) model with interpretable parameters to capture individual differences in decision policies.</li>
-            <li>Designed a hierarchical multimodal model integrating EEG, behavioral, and app-based digital phenotype data to predict alcohol craving.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ongoing Projects -->
-    <section>
-      <h2>Ongoing Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="row">
-            <div class="title">Development of a Personalized Color Vision Correction Display Filter Using fMRI-Based Neural Responses and Deep Learning</div>
-            <div class="subtle">Apr 2025 – Present</div>
-          </div>
-          <div class="subtle">Project Lead (Advisor: Prof. Jiook Cha)</div>
-          <ul class="bullets">
-            <li>Designed the full research pipeline: experiment design, data preprocessing, neural modeling, and optimization-based filter generation.</li>
-            <li>Analyzed inter-individual coherence and disparity of individuals with color vision deficiencies in neural color geometry using Procrustes alignment.</li>
-            <li>Funded by SNU Undergraduate Research Grant ($3,500).</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="row">
-            <div class="title">Inference of Latent Planning Depth in Human Pedestrian Navigation Using Planning-Aware Inverse Reinforcement Learning</div>
-            <div class="subtle">Sep 2025 – Present</div>
-          </div>
-          <div class="subtle">Research Analyst (Advisor: Prof. Woo-Young Ahn)</div>
-          <ul class="bullets">
-            <li>Developing a planning-aware inverse reinforcement learning framework to infer latent planning depth from human sequential decision-making.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="row">
-            <div class="title">A Time-Varying Drift Diffusion Model of Emotion and Reward Prediction Errors in Depression</div>
-            <div class="subtle">Jun 2025 – Present</div>
-          </div>
-          <div class="subtle">Project Lead (Advisor: Prof. Yuan-Wei Yao)</div>
-          <ul class="bullets">
-            <li>Developed a time-varying Drift Diffusion Model (tDDM) to investigate the hierarchical influence of emotion and reward prediction errors in social decision-making</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Poster Presentations -->
-    <section>
-      <h2>Poster Presentations</h2>
-      <div class="card">
-        <ul class="bullets">
-          <li><strong>Kim, Jinil</strong>, Cho, M., Seo, J., Cha, J. (Under review). <em>fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency</em>. Poster submitted to the 2026 Organization for Human Brain Mapping (OHBM) Annual Meeting, Bordeaux, France.</li>
-          <li><strong>Kim, Jinil</strong>, Yao, Y. W. (Aug 2025). <em>Why Do Depressed Individuals Punish?: A Computational Investigation of Emotion Learning and Bias in Maladaptive Social Behavior</em>. Poster presented at the Summer Research Program Poster Session, University of Hong Kong.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Honors & Awards -->
-    <section>
-      <h2>Honors & Awards</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <div class="row"><div class="title">Best Poster Award in SNU Undergrad Research Program (4th Place)</div><div class="subtle">Jan 2026</div></div>
-        </div>
-        <div class="card">
-          <div class="row"><div class="title">SNU Liberal Arts Competition (1st Place)</div><div class="subtle">Jul 2023</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Grants -->
-    <section>
-      <h2>Grants</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="row"><div class="title">KOSAF Humanity 100 Years Undergraduate Scholarship</div><div class="subtle">Mar 2025 – Jul 2026</div></div>
-          <div class="subtle">Amount: $12,500 (KRW 17,000,000)</div>
-        </div>
-        <div class="card">
-          <div class="row"><div class="title">The University of Hong Kong Foundation for Educational Development and Research Scholarship</div><div class="subtle">Jun 2025 – Aug 2025</div></div>
-          <div class="subtle">Amount: $1,300 (HKD 10,000)</div>
-        </div>
-        <div class="card">
-          <div class="row"><div class="title">Superior Academic Performance scholarship</div><div class="subtle">Mar 2022, 2023; Sep 2022</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section>
-      <h2>Skills</h2>
-      <div class="card">
-        <ul class="bullets">
-          <li><strong>Computational Modeling:</strong> Bayesian hierarchical models, Reinforcement Learning</li>
-          <li><strong>Neuroimaging:</strong> fMRI preprocessing, Neural decoding</li>
-          <li><strong>Programming:</strong> Python, R, Stan, C++, Java</li>
-          <li><strong>ML & Data:</strong> Deep learning (MLP, CNN), high-dimensional time-series</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Languages -->
-    <section>
-      <h2>Languages</h2>
-      <div class="card">
-        <p>Korean (Native), English (Full Professional Proficiency), French (Beginner)</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Jinil Kim
-  </footer>
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
