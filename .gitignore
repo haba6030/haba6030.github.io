@@ -21,6 +21,9 @@
 # *.tex
 CV/references/
 
+# Folder for other works
+about_me/
+
 # Hidden files and folders
 .*
 !.gitignore
