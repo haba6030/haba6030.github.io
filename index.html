@@ -158,10 +158,12 @@
     }
 
     .card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 2px 10px rgba(5,18,46,.06);
+      padding: 0.55rem 0.1rem;
+      border-bottom: 1px solid #e9edf2;
+    }
+
+    .grid > .card:last-child {
+      border-bottom: none;
     }
 
     .research-card {
@@ -235,6 +237,59 @@
       margin-bottom: 0.4rem;
     }
 
+    .exp-meta {
+      font-size: 0.92rem;
+      margin-top: 0.35rem;
+    }
+
+    .exp-label {
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .exp-desc {
+      margin-top: 0.4rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 0.75rem;
+      align-items: baseline;
+    }
+
+    .news-date {
+      color: var(--brand-2);
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .news-body {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 520px) {
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+      }
+    }
+
     .kv {
       display: flex;
       gap: .5rem;
@@ -302,6 +357,7 @@
         <ul>
           <li><a href="#about">About Me</a></li>
           <li><a href="#education">Education</a></li>
+          <li><a href="#news">News</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#honors">Honors and Awards</a></li>
           <li><a href="#scholarships">Scholarships</a></li>
@@ -349,6 +405,29 @@
           </div>
         </section>
 
+        <!-- News -->
+        <section id="news">
+          <h2>News</h2>
+          <ul class="news-list">
+            <li class="news-item">
+              <span class="news-date">Jul 2026</span>
+              <span class="news-body">Our color-vision paper was accepted as a poster at the <strong>ICML 2026 Workshop on Structured Data for Health</strong>. 🎉</span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">Jun 2026</span>
+              <span class="news-body">Poster accepted at the <strong>OHBM 2026 Annual Meeting</strong>.</span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">Jun 2025</span>
+              <span class="news-body">Selected for the <strong>HKU Summer Research Program (HKUSRP)</strong>, Faculty of Psychology.</span>
+            </li>
+            <li class="news-item">
+              <span class="news-date">Mar 2025</span>
+              <span class="news-body">Awarded the <strong>KOSAF Humanity 100 Years Undergraduate Scholarship</strong>. 🎓</span>
+            </li>
+          </ul>
+        </section>
+
         <!-- Research -->
         <section id="research">
           <h2>Research</h2>
@@ -365,9 +444,8 @@
                 </div>
                 <div class="members">Project Lead (Advisor: Prof. Jiook Cha)</div>
                 <ul class="bullets">
-                  <li>Designed the full research pipeline: experiment design, data preprocessing, neural modeling, and optimization-based filter generation.</li>
-                  <li>Analyzed inter-individual coherence and disparity of individuals with color vision deficiencies in neural color geometry using Procrustes alignment.</li>
-                  <li>Funded by SNU Undergraduate Research Grant ($3,500).</li>
+                  <li>Characterized <strong>individual-specific distortions of cortical hue geometry</strong> in color vision deficiency from fMRI, and translated them into <strong>personalized color-correction filters</strong>.</li>
+                  <li>Funded by <strong>SNU Undergraduate Research Grant</strong> ($3,500).</li>
                 </ul>
                 <div class="presentations">
                   <div class="presentations-title">Conferences</div>
@@ -391,7 +469,7 @@
                 </div>
                 <div class="members">Research Analyst (Advisor: Prof. Woo-Young Ahn)</div>
                 <ul class="bullets">
-                  <li>Developing a planning-aware inverse reinforcement learning framework to infer latent planning depth from human sequential decision-making.</li>
+                  <li>Extending <strong>adversarial IRL</strong> with a state-dependent <strong>planning-depth</strong> latent to <strong>better imitate human decision-making</strong>, while recovering interpretable planning depth from behavior alone.</li>
                 </ul>
               </div>
             </div>
@@ -408,7 +486,7 @@
                 </div>
                 <div class="members">Project Lead (Advisor: Prof. Yuan-Wei Yao)</div>
                 <ul class="bullets">
-                  <li>Applying a time-varying Drift Diffusion Model (tDDM) to investigate the temporal signature in integrating prediction errors in social decision-making</li>
+                  <li>Built a <strong>time-varying Drift Diffusion Model (tDDM)</strong> with a per-attribute onset parameter (τ) to capture <em>when</em> depression <strong>delays integration of the second decision attribute</strong> in social decisions.</li>
                 </ul>
                 <div class="presentations">
                   <div class="presentations-title">Presentations</div>
@@ -442,14 +520,10 @@
         <!-- Honors & Awards -->
         <section id="honors">
           <h2>Honors and Awards</h2>
-          <div class="grid grid-2">
-            <div class="card">
-              <div class="row"><div class="title">Best Poster Award in SNU Undergrad Research Program (4th Place)</div><div class="subtle">Jan 2026</div></div>
-            </div>
-            <div class="card">
-              <div class="row"><div class="title">SNU Liberal Arts Competition (1st Place)</div><div class="subtle">Jul 2023</div></div>
-            </div>
-          </div>
+          <ul class="bullets">
+            <li><strong>Best Poster Award (4th Place)</strong>, SNU Undergraduate Research Program <span class="subtle">· Jan 2026</span></li>
+            <li><strong>SNU Liberal Arts Competition (1st Place)</strong> <span class="subtle">· Jul 2023</span></li>
+          </ul>
         </section>
 
         <!-- Teaching -->
@@ -478,25 +552,32 @@
           <div class="grid">
             <div class="card">
               <div class="row">
-                <div><span class="title"><a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">Computational Clinical Science Laboratory</a></span> · Seoul National University</div>
-                <div class="subtle">Apr – Jun 2025; Sep 2025 –</div>
+                <div><span class="title"><a href="https://www.connectomelab.com/" target="_blank" rel="noopener">Connectome Lab</a></span> · Seoul National University</div>
+                <div class="subtle">Jul 2026 – Present</div>
               </div>
-              <div class="subtle">Undergraduate RA (Advisor: Prof. Woo-Young Ahn)</div>
-              <ul class="bullets">
-                <li>Developed an Adversarial Inverse Reinforcement Learning (AIRL) model with interpretable parameters to capture individual differences in decision policies.</li>
-                <li>Designed a hierarchical multimodal model integrating EEG, behavioral, and app-based digital phenotype data to predict alcohol craving.</li>
-              </ul>
+              <div class="subtle">Undergraduate RA</div>
+              <div class="exp-meta"><span class="exp-label">Advisor:</span> Prof. Jiook Cha</div>
+              <div class="exp-meta"><span class="exp-label">Research Area:</span> Brain Foundation Model; Neural Field</div>
             </div>
 
             <div class="card">
               <div class="row">
-                <div><span class="title"><a href="https://psychology.hku.hk/people/yuanwei_yao/" target="_blank" rel="noopener">Mental health, Internet, Neuroscience & Decision-making Lab</a></span> · University of Hong Kong</div>
+                <div><span class="title"><a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">Computational Clinical Science Lab</a></span> · Seoul National University</div>
+                <div class="subtle">Apr – Jun 2025; Sep 2025 – Present</div>
+              </div>
+              <div class="subtle">Undergraduate RA</div>
+              <div class="exp-meta"><span class="exp-label">Advisor:</span> Prof. Woo-Young Ahn</div>
+              <div class="exp-meta"><span class="exp-label">Research Area:</span> Inverse RL; Computational Psychiatry; Multimodal Digital Phenotyping</div>
+            </div>
+
+            <div class="card">
+              <div class="row">
+                <div><span class="title"><a href="https://psychology.hku.hk/people/yuanwei_yao/" target="_blank" rel="noopener">MIND Lab</a></span> · University of Hong Kong</div>
                 <div class="subtle">Jun 2025 – Aug 2025</div>
               </div>
-              <div class="subtle">Visiting Researcher (Advisor: Prof. Yuan-Wei Yao)</div>
-              <ul class="bullets">
-                <li>Applied a time-varying Drift Diffusion Model (tDDM) to investigate the temporal signature in integrating prediction errors in social decision-making</li>
-              </ul>
+              <div class="subtle">Visiting Researcher</div>
+              <div class="exp-meta"><span class="exp-label">Advisor:</span> Prof. Yuan-Wei Yao</div>
+              <div class="exp-meta"><span class="exp-label">Research Area:</span> Computational Modeling; Social Decision-Making</div>
             </div>
 
           </div>
