@@ -8,8 +8,8 @@
   a4paper,
   left=1.4cm,
   right=1.4cm,
-  top=2.0cm,
-  bottom=2.0cm
+  top=1.5cm,
+  bottom=1.5cm
 ]{geometry}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.25em}
@@ -17,6 +17,7 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,urlcolor=black}
 \setlist[itemize]{nosep,leftmargin=1.2em}
@@ -36,12 +37,15 @@
   \end{tabularx}\vspace{0.15em}
 }
 \newcommand{\cvsection}[1]{%
-  \vspace{0.9em}
+  \needspace{4\baselineskip}%
+  \vspace{0.6em}
   {\large\bfseries\MakeUppercase{#1}}\par
   \vspace{0.15em}\hrule height 0.6pt \vspace{0.4em}
 }
 \newcommand{\cvname}[1]{\vspace{-0.2em}{\LARGE\bfseries #1}\par\vspace{0.3em}}
 \newcommand{\cvline}[1]{#1\par}
+% Keep an entry (title + role row + its bullets) from splitting across pages
+\newcommand{\cventry}[1][5]{\needspace{#1\baselineskip}}
 
 \begin{document}
 
@@ -61,7 +65,7 @@
 \cvsection{Education}
 \orgrow{Seoul National University}{Seoul, South Korea}
 \rolerow{B.A. Linguistics · B.A. Psychology · B.S. Computer Science}{Mar 2021 -- Exp. Feb 2027}
-GPA: 4.18 / 4.3 (3.96 / 4.0)\quad |\quad Major GPA (4.0): Ling./Psych.: 4.00, CS: 3.82\\
+GPA: 4.18 / 4.3 (3.97 / 4.0)\\
 {\footnotesize * Mandatory military service, Jul 2023 -- Jan 2025}
 
 \orgrow{The University of Hong Kong}{Hong Kong SAR}
@@ -69,18 +73,31 @@ GPA: 4.18 / 4.3 (3.96 / 4.0)\quad |\quad Major GPA (4.0): Ling./Psych.: 4.00, CS
 \vspace{-0.4em}
 
 % ===== Publications & Manuscripts =====
+\vspace{-0.5em}
 \cvsection{Publications \& Manuscripts}
-{\footnotesize Sole first author on all listed work.}\par\vspace{0.3em}
+{\footnotesize Sole first author on all listed work.}\par\vspace{0.2em}
+\textit{Workshop Papers}\par\vspace{0.1em}
+\begin{itemize}[itemsep=0.3em]
+  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry.} ICML 2026 Workshop on Structured Data for Health (SD4H), Seoul, Korea.
+\end{itemize}
+\vspace{0.25em}
+\textit{In Preparation}\par\vspace{0.1em}
+\begin{itemize}[itemsep=0.3em]
+  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. \textit{Individual-specific distortion of cortical hue geometry in color vision deficiency informs personalized color correction.}
+  \item \textbf{Kim, J.}, \& Yao, Y.-W. \textit{When, not just how strongly: a delayed onset of attribute integration in depression.}
+  \item \textbf{Kim, J.}, et al. \textit{Inverse reinforcement learning of latent human planning.}
+\end{itemize}
+
+% ===== Presentations =====
+\cvsection{Presentations}
 \begin{itemize}[itemsep=0.5em]
-  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry.} ICML 2026 Workshop on Structured Data for Health (SD4H), Seoul, Korea. [Workshop paper --- accepted]
-  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency.} OHBM 2026 Annual Meeting, Bordeaux, France. [Poster --- accepted]
-  \item \textbf{Kim, J.}, \& Yao, Y.-W. \textit{When, not just how strongly: a delayed onset of attribute integration in depression.} Manuscript in preparation. \textnormal{(Earlier version presented as poster, HKU Summer Research Program, Aug 2025.)}
-  \item \textbf{Kim, J.}, et al. Manuscript in preparation on inverse reinforcement learning of human planning.
+  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency.} OHBM 2026 Annual Meeting, Bordeaux, France. [Poster]
+  \item \textbf{Kim, J.}, \& Yao, Y.-W. (2025). \textit{When, not just how strongly: a delayed onset of attribute integration in depression.} HKU Summer Research Program, Hong Kong. [Poster]
 \end{itemize}
 
 % ===== Research Projects =====
 \cvsection{Research Projects}
-\textbf{Distortion of cortical hue geometry in color vision deficiency enables individualized color-correction filters}\\
+\cventry[7]\textbf{Individual-specific distortion of cortical hue geometry in color vision deficiency informs personalized color correction}\\
 \rolerow{Project Lead, sole first author \ \ (Advisor: Prof.\ Jiook Cha)}{Apr 2025 -- Present}
 \begin{itemize}
   \item Characterized individual-specific distortions of cortical hue geometry in color vision deficiency from fMRI, and translated them into personalized color-correction filters.
@@ -88,14 +105,14 @@ GPA: 4.18 / 4.3 (3.96 / 4.0)\quad |\quad Major GPA (4.0): Ling./Psych.: 4.00, CS
 \end{itemize}
 \vspace{0.5em}
 
-\textbf{When, not just how strongly: a delayed onset of attribute integration in depression}\\
+\cventry[6]\textbf{When, not just how strongly: a delayed onset of attribute integration in depression}\\
 \rolerow{Project Lead, sole first author \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Present}
 \begin{itemize}
   \item Built a time-varying drift-diffusion model with an onset-latency parameter ($\tau$) showing that depression integrates the second decision attribute later in social decisions.
 \end{itemize}
 \vspace{0.5em}
 
-\textbf{Inverse Reinforcement Learning of Latent Human Planning}\\
+\cventry[5]\textbf{Inverse Reinforcement Learning of Latent Human Planning}\\
 \rolerow{Project Lead, sole first author \ \ (Advisor: Prof.\ Woo-Young Ahn)}{Sep 2025 -- Present}
 \begin{itemize}
   \item Developing an inverse reinforcement learning framework that more faithfully models human decision-making while recovering latent planning depth from behavior alone.
@@ -103,7 +120,6 @@ GPA: 4.18 / 4.3 (3.96 / 4.0)\quad |\quad Major GPA (4.0): Ling./Psych.: 4.00, CS
 \vspace{0.8em}
 
 % ===== Research Experience =====
-\newpage
 \cvsection{Research Experience}
 \orgrow{Connectome Lab}{Seoul National University}
 \rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Jiook Cha)}{Jul 2026 -- Present}
@@ -120,22 +136,23 @@ Research area: Inverse RL; computational psychiatry; multimodal digital phenotyp
 Research area: Computational modeling of social decision-making
 \vspace{0.5em}
 
-% ===== Grants =====
-\cvsection{Grants}
+% ===== Scholarships & Fellowships =====
+\cvsection{Scholarships \& Fellowships}
 \orgrow[0.24]{KOSAF Humanity 100 Years Undergraduate Scholarship}{Mar 2025 -- Jul 2026}
-\rolerow[0.24]{Amount: \$12{,}500 (KRW 17{,}000{,}000)}{}
+\rolerow[0.24]{Amount: \$12{,}500}{}
 
-\orgrow[0.24]{SNU Undergraduate Research Grant (color-vision project)}{Apr 2025}
+\orgrow[0.24]{SNU Undergraduate Research Grant}{Apr 2025}
 \rolerow[0.24]{Amount: \$3{,}500}{}
 
 \orgrow[0.24]{The University of Hong Kong Foundation for Educational Development and Research Scholarship}{Jun 2025 -- Aug 2025}
-\rolerow[0.24]{Amount: \$1{,}300 (HKD 10{,}000)}{}
+\rolerow[0.24]{Amount: \$1{,}300}{}
 
-\orgrow[0.24]{Superior Academic Performance scholarship}{Mar 2022, 2023; Sep 2022}
+\orgrow[0.24]{Superior Academic Performance Scholarship}{Mar 2022, 2023; Sep 2022}
+\rolerow[0.24]{Amount: \$1{,}650 each}{}
 
 % ===== Honors & Awards =====
 \cvsection{Honors \& Awards}
-\orgrow[0.15]{Best Poster Award in SNU Undergrad Research Program (4th Place)}{Jan 2026}
+\orgrow[0.15]{Best Poster Award, SNU Undergraduate Research Program}{Jan 2026}
 \orgrow[0.15]{SNU Liberal Arts Competition (1st Place)}{Jul 2023}
 
 % ===== Teaching =====
