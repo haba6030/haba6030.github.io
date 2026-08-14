@@ -8,11 +8,11 @@
   a4paper,
   left=1.4cm,
   right=1.4cm,
-  top=1.5cm,
-  bottom=1.5cm
+  top=1.25cm,
+  bottom=1.25cm
 ]{geometry}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{0.15em}
 
 \usepackage{tabularx}
 \usepackage{array}
@@ -38,7 +38,7 @@
 }
 \newcommand{\cvsection}[1]{%
   \needspace{4\baselineskip}%
-  \vspace{0.6em}
+  \vspace{0.45em}
   {\large\bfseries\MakeUppercase{#1}}\par
   \vspace{0.15em}\hrule height 0.6pt \vspace{0.4em}
 }
@@ -75,17 +75,20 @@ GPA: 4.18 / 4.3 (3.97 / 4.0)\\
 % ===== Publications & Manuscripts =====
 \vspace{-0.5em}
 \cvsection{Publications \& Manuscripts}
-{\footnotesize Sole first author on all listed work.}\par\vspace{0.2em}
 \textit{Workshop Papers}\par\vspace{0.1em}
 \begin{itemize}[itemsep=0.3em]
-  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry.} ICML 2026 Workshop on Structured Data for Health (SD4H), Seoul, Korea.
+  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry.} ICML 2026 Workshop on Structured Data for Health, Seoul, Korea.
+\end{itemize}
+\vspace{0.25em}
+\textit{Under Review}\par\vspace{0.1em}
+\begin{itemize}[itemsep=0.3em]
+  \item \textbf{Kim, J.}, Jeong, J., Yun, H., Oh, M.-H., \& Ahn, W.-Y. \textit{Inverse reinforcement learning of latent human planning.} Under review at NeurIPS.
 \end{itemize}
 \vspace{0.25em}
 \textit{In Preparation}\par\vspace{0.1em}
 \begin{itemize}[itemsep=0.3em]
   \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. \textit{Individual-specific distortion of cortical hue geometry in color vision deficiency informs personalized color correction.}
   \item \textbf{Kim, J.}, \& Yao, Y.-W. \textit{When, not just how strongly: a delayed onset of attribute integration in depression.}
-  \item \textbf{Kim, J.}, et al. \textit{Inverse reinforcement learning of latent human planning.}
 \end{itemize}
 
 % ===== Presentations =====
@@ -120,6 +123,9 @@ GPA: 4.18 / 4.3 (3.97 / 4.0)\\
 \vspace{0.8em}
 
 % ===== Research Experience =====
+% Page 2 must begin with this section (see CLAUDE.md: no section heading may be
+% orphaned at the foot of a page)
+\newpage
 \cvsection{Research Experience}
 \orgrow{Connectome Lab}{Seoul National University}
 \rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Jiook Cha)}{Jul 2026 -- Present}
@@ -153,7 +159,7 @@ Research area: Computational modeling of social decision-making
 % ===== Honors & Awards =====
 \cvsection{Honors \& Awards}
 \orgrow[0.15]{Best Poster Award, SNU Undergraduate Research Program}{Jan 2026}
-\orgrow[0.15]{SNU Liberal Arts Competition (1st Place)}{Jul 2023}
+\orgrow[0.15]{SNU Student-Proposed Liberal Arts Course Contest (1st Place)}{Jul 2023}
 
 % ===== Teaching =====
 \cvsection{Teaching}
