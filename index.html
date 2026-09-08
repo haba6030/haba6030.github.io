@@ -166,26 +166,66 @@
       border-bottom: none;
     }
 
-    .research-card {
+    /* Publication rows: representative figure on the left, entry on the right */
+    .pub-entry {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 1.5rem;
+      grid-template-columns: 150px 1fr;
+      gap: 1.1rem;
       align-items: start;
-      background: var(--card);
-      border-radius: 12px;
-      padding: 1.2rem;
-      box-shadow: 0 2px 10px rgba(5,18,46,.06);
+      margin-bottom: 1.15rem;
     }
 
-    .research-card img {
+    .pub-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-figure img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+      display: block;
+      border-radius: 6px;
+      border: 1px solid #e5eaf1;
+      background: #fff;
     }
 
-    .research-content {
+    .pub-body {
       min-width: 0;
+    }
+
+    .pub-entry.no-figure {
+      grid-template-columns: 1fr;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      font-size: 0.97rem;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+
+    .pub-authors {
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .pub-venue {
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    @media (max-width: 640px) {
+      .pub-entry {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
+      .pub-figure {
+        max-width: 260px;
+      }
+      .pub-figure:empty {
+        display: none;
+      }
     }
 
     .row {
@@ -197,19 +237,6 @@
 
     .title {
       font-weight: 700;
-    }
-
-    .project-title {
-      font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-
-    .members {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
     }
 
     .subtle {
@@ -225,7 +252,7 @@
     }
 
     .pub-group {
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.6rem;
     }
 
     .pub-group-title {
@@ -233,16 +260,6 @@
       font-size: 0.95rem;
       color: var(--brand);
       margin-bottom: 0.35rem;
-    }
-
-    .pub-list {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .pub-list li {
-      margin: 0.4rem 0;
-      line-height: 1.5;
     }
 
     .pub-tag {
@@ -347,9 +364,6 @@
         position: static;
         height: auto;
       }
-      .research-card {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -384,11 +398,10 @@
           <li><a href="#education">Education</a></li>
           <li><a href="#news">News</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li><a href="#research">Research</a></li>
+          <li><a href="#experiences">Research Experiences</a></li>
           <li><a href="#honors">Honors and Awards</a></li>
           <li><a href="#scholarships">Scholarships &amp; Fellowships</a></li>
           <li><a href="#teaching">Teaching</a></li>
-          <li><a href="#experiences">Research Experiences</a></li>
         </ul>
       </nav>
     </aside>
@@ -399,14 +412,9 @@
         <!-- About Me -->
         <section id="about">
           <h2>About Me</h2>
-          <p>Hi! I'm an undergraduate student at <a href="http://en.snu.ac.kr/" target="_blank" rel="noopener">Seoul National University</a>, majoring in Linguistics, Psychology, and Computer Science.</p>
-          <p>I aim to develop computational frameworks that extract latent signatures from human brain and behavior, and translate them into practical systems that can:</p>
-          <ul class="bullets">
-            <li>Support early and reliable diagnosis of mental and cognitive states,</li>
-            <li>Personalize interventions based on individual brain–behavior profiles,</li>
-            <li>Improve artificial intelligence by incorporating principles of human learning and adaptation,</li>
-            <li>Uncover shared and distinct features across brains, machines, languages, and the systems that structure human life.</li>
-          </ul>
+          <p>Hi! I'm an undergraduate student at <a href="http://en.snu.ac.kr/" target="_blank" rel="noopener">Seoul National University</a>, pursuing triple majors in Linguistics, Psychology, and Computer Science. I am currently working as a Research Assistant under <a href="https://www.connectomelab.com/" target="_blank" rel="noopener">Jiook Cha</a> and <a href="https://ccs-lab.github.io/" target="_blank" rel="noopener">Woo-Young Ahn</a>. I also worked as a visiting researcher under <a href="https://psychology.hku.hk/people/yuanwei_yao/" target="_blank" rel="noopener">Yuan-Wei Yao</a> at the University of Hong Kong.</p>
+
+          <p>I am looking for a <strong>Ph.D. position</strong> in Computational Neuroscience. My research interest is in identifying the <strong>principles</strong> linking behavior and neural activity by identifying the <strong>latent structure</strong> they share.</p>
         </section>
 
         <!-- Education -->
@@ -461,139 +469,91 @@
 
           <div class="pub-group">
             <div class="pub-group-title">Workshop Papers</div>
-            <ul class="pub-list">
-              <li>
-                <strong>Kim, J.</strong>, Cho, A. M., Seo, J., &amp; Cha, J. (2026). <em>Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry</em>. ICML 2026 Workshop on Structured Data for Health (SD4H), Seoul, Korea.
-                <div class="pub-links"><a href="https://openreview.net/forum?id=YSptfeekLI" target="_blank" rel="noopener">OpenReview</a> · <a href="colorblind_ICML/poster_ICML_0704.pdf" target="_blank" rel="noopener">Poster</a> · <a href="colorblind_ICML/" target="_blank" rel="noopener">Project page</a></div>
-              </li>
-            </ul>
+
+            <div class="pub-entry">
+              <div class="pub-figure">
+                <a href="colorblind_ICML/figures/fig1_pipeline_revise.png" target="_blank"><img src="colorblind_ICML/figures/fig1_pipeline_revise.png" alt="Pipeline for inferring individualized color-vision distortions from fMRI" /></a>
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Albert Minkue Cho, Jungwoo Seo, Jiook Cha</div>
+                <div class="pub-venue"><em>ICML 2026 Workshop on Structured Data for Health (SD4H)</em>, Seoul, Korea. 2026.
+                  [<a href="https://openreview.net/forum?id=YSptfeekLI" target="_blank" rel="noopener">paper</a>],
+                  [<a href="colorblind_ICML/poster_ICML_0704.pdf" target="_blank" rel="noopener">poster</a>],
+                  [<a href="colorblind_ICML/" target="_blank" rel="noopener">project page</a>]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-group">
+            <div class="pub-group-title">Under Review</div>
+
+            <div class="pub-entry">
+              <div class="pub-figure">
+                <a href="images/planning-irl.png" target="_blank"><img src="images/planning-irl.png" alt="State-conditional bounded-foresight inverse reinforcement learning" /></a>
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">Inverse reinforcement learning of latent human planning</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Jinwoo Jeong, Hyeongjun Yun, Min-hwan Oh, Woo-Young Ahn</div>
+                <div class="pub-venue">Under review at <em>NeurIPS</em>. 2026.</div>
+              </div>
+            </div>
+
+            <div class="pub-entry">
+              <div class="pub-figure">
+                <a href="images/conjunction-relevance.png" target="_blank"><img src="images/conjunction-relevance.png" alt="Conversational relevance and the conjunction fallacy in language models" /></a>
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">Conversational relevance in the conjunction fallacy is represented independently in language models</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Jaejun Ryu</div>
+                <div class="pub-venue">Under review at the <em>NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models (LP4FM)</em>. 2026.</div>
+              </div>
+            </div>
           </div>
 
           <div class="pub-group">
             <div class="pub-group-title">In Preparation</div>
-            <ul class="pub-list">
-              <li><strong>Kim, J.</strong>, Cho, A. M., Seo, J., &amp; Cha, J. <em>Individual-specific distortion of cortical hue geometry in color vision deficiency informs personalized color correction</em>.</li>
-              <li><strong>Kim, J.</strong>, &amp; Yao, Y.-W. <em>When, not just how strongly: a delayed onset of attribute integration in depression</em>.</li>
-              <li><strong>Kim, J.</strong>, et al. <em>Inverse reinforcement learning of latent human planning</em>.</li>
-            </ul>
+
+            <div class="pub-entry">
+              <div class="pub-figure">
+                <a href="images/color-vision.png" target="_blank"><img src="images/color-vision.png" alt="Cortical hue representation geometry in color vision deficiency" /></a>
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">Preserved categorical identification with impaired hue interpolation in color vision deficiency motivates a cortically derived correction filter</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Albert Minkue Cho, Jungwoo Seo, Jiook Cha</div>
+              </div>
+            </div>
+
+            <div class="pub-entry">
+              <div class="pub-figure">
+                <a href="images/tddm.png" target="_blank"><img src="images/tddm.png" alt="Time-varying drift diffusion model of social decisions in depression" /></a>
+              </div>
+              <div class="pub-body">
+                <div class="pub-title">Depression relates to when, and not only how strongly, information enters a social decision</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Yuan-Wei Yao</div>
+              </div>
+            </div>
           </div>
 
           <div class="pub-group">
             <div class="pub-group-title">Presentations</div>
-            <ul class="pub-list">
-              <li><strong>Kim, J.</strong>, Cho, M., Seo, J., &amp; Cha, J. (2026). <em>fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency</em>. OHBM 2026 Annual Meeting, Bordeaux, France. <span class="pub-tag">Poster</span></li>
-              <li><strong>Kim, J.</strong>, &amp; Yao, Y.-W. (2025). <em>When, not just how strongly: a delayed onset of attribute integration in depression</em>. HKU Summer Research Program, Hong Kong. <span class="pub-tag">Poster</span></li>
-            </ul>
-          </div>
-        </section>
 
-        <!-- Research -->
-        <section id="research">
-          <h2>Research</h2>
-          <div class="grid">
-            <!-- Project 1: Color Vision -->
-            <div class="research-card">
-              <a href="images/color-vision.png" target="_blank">
-                <img src="images/color-vision.png" alt="Color Vision fMRI Study" />
-              </a>
-              <div class="research-content">
-                <div class="row">
-                  <div class="project-title">Individual-specific distortion of cortical hue geometry in color vision deficiency informs personalized color correction</div>
-                  <div class="subtle">Apr 2025 – Present</div>
-                </div>
-                <div class="members">Project Lead (Advisor: Prof. Jiook Cha)</div>
-                <ul class="bullets">
-                  <li>Characterized <strong>individual-specific distortions of cortical hue geometry</strong> in color vision deficiency from fMRI, and translated them into <strong>personalized color-correction filters</strong>.</li>
-                  <li>Funded by <strong>SNU Undergraduate Research Grant</strong> ($3,500).</li>
-                </ul>
+            <div class="pub-entry no-figure">
+              <div class="pub-body">
+                <div class="pub-title">fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Minkue Cho, Jungwoo Seo, Jiook Cha</div>
+                <div class="pub-venue"><em>OHBM 2026 Annual Meeting</em>, Bordeaux, France. 2026. <span class="pub-tag">Poster</span></div>
               </div>
             </div>
 
-            <!-- Project 2: Planning IRL -->
-            <div class="research-card">
-              <a href="images/planning-irl.png" target="_blank">
-                <img src="images/planning-irl.png" alt="Planning IRL Navigation" />
-              </a>
-              <div class="research-content">
-                <div class="row">
-                  <div class="project-title">Inverse Reinforcement Learning of Latent Human Planning</div>
-                  <div class="subtle">Sep 2025 – Present</div>
-                </div>
-                <div class="members">Project Lead (Advisor: Prof. Woo-Young Ahn)</div>
-                <ul class="bullets">
-                  <li>Extending <strong>adversarial IRL</strong> with a state-dependent <strong>planning-depth</strong> latent to <strong>better imitate human decision-making</strong>, while recovering interpretable planning depth from behavior alone.</li>
-                </ul>
+            <div class="pub-entry no-figure">
+              <div class="pub-body">
+                <div class="pub-title">When, not just how strongly: a delayed onset of attribute integration in depression</div>
+                <div class="pub-authors"><strong>Jinil Kim</strong>, Yuan-Wei Yao</div>
+                <div class="pub-venue"><em>HKU Summer Research Program</em>, Hong Kong. 2025. <span class="pub-tag">Poster</span></div>
               </div>
             </div>
-
-            <!-- Project 3: tDDM -->
-            <div class="research-card">
-              <a href="images/tddm.png" target="_blank">
-                <img src="images/tddm.png" alt="tDDM Emotion and Reward" />
-              </a>
-              <div class="research-content">
-                <div class="row">
-                  <div class="project-title">When, not just how strongly: a delayed onset of attribute integration in depression</div>
-                  <div class="subtle">Jun 2025 – Present</div>
-                </div>
-                <div class="members">Project Lead (Advisor: Prof. Yuan-Wei Yao)</div>
-                <ul class="bullets">
-                  <li>Built a <strong>time-varying Drift Diffusion Model (tDDM)</strong> with a per-attribute onset parameter (τ) to capture <em>when</em> depression <strong>delays integration of the second decision attribute</strong> in social decisions.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Honors & Awards -->
-        <section id="honors">
-          <h2>Honors and Awards</h2>
-          <ul class="bullets">
-            <li><strong>Best Poster Award</strong>, SNU Undergraduate Research Program <span class="subtle">· Jan 2026</span></li>
-            <li><strong>SNU Student-Proposed Liberal Arts Course Contest (1st Place)</strong> <span class="subtle">· Jul 2023</span></li>
-          </ul>
-        </section>
-
-        <!-- Scholarships & Fellowships -->
-        <section id="scholarships">
-          <h2>Scholarships &amp; Fellowships</h2>
-          <div class="grid">
-            <div class="card">
-              <div class="row"><div class="title">KOSAF Humanity 100 Years Undergraduate Scholarship</div><div class="subtle">Mar 2025 – Jul 2026</div></div>
-              <div class="subtle">Amount: $12,500</div>
-            </div>
-            <div class="card">
-              <div class="row"><div class="title">SNU Undergraduate Research Grant <span style="font-weight:400">(color-vision project)</span></div><div class="subtle">Apr 2025</div></div>
-              <div class="subtle">Amount: $3,500</div>
-            </div>
-            <div class="card">
-              <div class="row"><div class="title">The University of Hong Kong Foundation for Educational Development and Research Scholarship</div><div class="subtle">Jun 2025 – Aug 2025</div></div>
-              <div class="subtle">Amount: $1,300</div>
-            </div>
-            <div class="card">
-              <div class="row"><div class="title">Superior Academic Performance Scholarship</div><div class="subtle">Mar 2022, 2023; Sep 2022</div></div>
-              <div class="subtle">Amount: $1,650 each</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Teaching -->
-        <section id="teaching">
-          <h2>Teaching</h2>
-          <div class="grid">
-            <div class="card">
-              <div class="row">
-                <div><span class="title">Teaching Assistant, Basic Computing (English)</span> · Seoul National University</div>
-                <div class="subtle">Mar 2026</div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="row">
-                <div><span class="title">Teaching Assistant, Basic Computing (Korean)</span> · Seoul National University</div>
-                <div class="subtle">Sep 2025</div>
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -629,6 +589,62 @@
               <div class="subtle">Visiting Researcher</div>
               <div class="exp-meta"><span class="exp-label">Advisor:</span> Prof. Yuan-Wei Yao</div>
               <div class="exp-meta"><span class="exp-label">Research Area:</span> Computational Modeling; Social Decision-Making</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Honors & Awards -->
+        <section id="honors">
+          <h2>Honors and Awards</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row"><div class="title">Best Poster Award, SNU Undergraduate Research Program</div><div class="subtle">Jan 2026</div></div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">SNU Student-Proposed Liberal Arts Course Contest (1st Place)</div><div class="subtle">Jul 2023</div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Scholarships & Fellowships -->
+        <section id="scholarships">
+          <h2>Scholarships &amp; Fellowships</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row"><div class="title">KOSAF Humanity 100 Years Undergraduate Scholarship</div><div class="subtle">Mar 2025 – Jul 2026</div></div>
+              <div class="subtle">Amount: $12,500</div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">SNU Undergraduate Research Grant</div><div class="subtle">Apr 2025</div></div>
+              <div class="subtle">Amount: $3,500</div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">The University of Hong Kong Foundation for Educational Development and Research Scholarship</div><div class="subtle">Jun 2025 – Aug 2025</div></div>
+              <div class="subtle">Amount: $1,300</div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">Superior Academic Performance Scholarship</div><div class="subtle">Mar 2022, 2023; Sep 2022</div></div>
+              <div class="subtle">Amount: $1,650 each</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Teaching -->
+        <section id="teaching">
+          <h2>Teaching</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="row">
+                <div><span class="title">Teaching Assistant, Basic Computing (English)</span> · Seoul National University</div>
+                <div class="subtle">Mar 2026</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div><span class="title">Teaching Assistant, Basic Computing (Korean)</span> · Seoul National University</div>
+                <div class="subtle">Sep 2025</div>
+              </div>
             </div>
 
           </div>
