@@ -36,11 +36,16 @@
   #2 & #3\\
   \end{tabularx}\vspace{0.15em}
 }
+\newcommand{\courserow}[2]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.21\textwidth} L@{}}%
+  \textbf{#1} & #2\\
+  \end{tabularx}\vspace{0.15em}
+}
 \newcommand{\cvsection}[1]{%
   \needspace{4\baselineskip}%
   \vspace{0.45em}
   {\large\bfseries\MakeUppercase{#1}}\par
-  \vspace{0.15em}\hrule height 0.6pt \vspace{0.4em}
+  \vspace{0.15em}\hrule height 0.6pt \vspace{0.40em}
 }
 \newcommand{\cvname}[1]{\vspace{-0.2em}{\LARGE\bfseries #1}\par\vspace{0.3em}}
 \newcommand{\cvline}[1]{#1\par}
@@ -48,42 +53,42 @@
 \newcommand{\cventry}[1][5]{\needspace{#1\baselineskip}}
 
 \begin{document}
+\pagestyle{empty}
 
 % ===== Header =====
 \cvname{Jinil Kim}
-\cvline{\href{mailto:haba6030@snu.ac.kr}{haba6030@snu.ac.kr} \quad | \quad Homepage: \url{https://haba6030.github.io/} \quad | \quad GitHub: \url{github.com/haba6030}}
+\cvline{\href{mailto:haba6030@gmail.com}{haba6030@gmail.com} \ \ | \ \ Homepage: \url{https://haba6030.github.io/} \ \ | \ \ GitHub: \url{github.com/haba6030}}
 
 % ===== Research Interest =====
-\cvsection{Research Interest}
+\cvsection{Research Interests}
 \begin{itemize}
- \item Developing computational frameworks that extract latent signatures from human brain and behavior
- \item Translating these into real-world systems for personalized interventions and human-inspired AI
- \item Uncovering shared and distinct principles across brains, machines, and languages
+ \item \textit{Computational Neuroscience} (brain--behavior principles, shared latent structure)
+ \item \textit{Human-Inspired AI and AI for Neuroscience}
+ \item \textit{Clinical Translation} (personalized diagnosis and intervention)
 \end{itemize}
 
 % ===== Education =====
 \cvsection{Education}
 \orgrow{Seoul National University}{Seoul, South Korea}
-\rolerow{B.A. Linguistics · B.A. Psychology · B.S. Computer Science}{Mar 2021 -- Exp. Feb 2027}
-GPA: 4.18 / 4.3 (3.97 / 4.0)\\
-{\footnotesize * Mandatory military service, Jul 2023 -- Jan 2025}
+\rolerow{B.S. Computer Science · B.A. Psychology · B.A. Linguistics}{Mar 2021 -- Exp. Feb 2027}
+GPA: 4.18 / 4.3 (3.97 / 4.0) · 9 semesters (Mandatory military service, Jul 2023 -- Jan 2025)
+\vspace{0.35em}
 
 \orgrow{The University of Hong Kong}{Hong Kong SAR}
 \rolerow{Summer Research Program, Faculty of Psychology}{Jun 2025 -- Aug 2025}
-\vspace{-0.4em}
+\vspace{-15.2pt}
 
 % ===== Publications & Manuscripts =====
-\vspace{-0.5em}
 \cvsection{Publications \& Manuscripts}
 \textit{Workshop Papers}\par\vspace{0.1em}
 \begin{itemize}[itemsep=0.3em]
-  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring Individualized Color-Vision Distortions from fMRI Hue-Representation Geometry.} ICML 2026 Workshop on Structured Data for Health, Seoul, Korea.
+  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring individualized color-vision distortions from fMRI hue-representation geometry.} International Conference on Machine Learning (ICML) 2026 Workshop on Structured Data for Health, Seoul, Korea.
 \end{itemize}
 \vspace{0.25em}
 \textit{Under Review}\par\vspace{0.1em}
 \begin{itemize}[itemsep=0.3em]
-  \item \textbf{Kim, J.}, Jeong, J., Yun, H., Oh, M.-H., \& Ahn, W.-Y. \textit{Inverse reinforcement learning of latent human planning.} Under review at NeurIPS.
-  \item \textbf{Kim, J.}, \& Ryu, J. \textit{Conversational relevance in the conjunction fallacy is represented independently in language models.} Under review at the NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models (LP4FM).
+  \item \textbf{Kim, J.}, Jeong, J., Yun, H., Oh, M.-H., \& Ahn, W.-Y. (2026). \textit{Inverse reinforcement learning of latent human planning.} Under review at the Annual Conference on Neural Information Processing Systems (NeurIPS).
+  \item \textbf{Kim, J.}, \& Ryu, J. (2026). \textit{Conversational relevance in the conjunction fallacy is represented independently in language models.} Under review at the NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models (LP4FM).
 \end{itemize}
 \vspace{0.25em}
 \textit{In Preparation}\par\vspace{0.1em}
@@ -93,84 +98,60 @@ GPA: 4.18 / 4.3 (3.97 / 4.0)\\
 \end{itemize}
 
 % ===== Presentations =====
-\cvsection{Presentations}
+\cvsection{Conference Presentation}
 \begin{itemize}[itemsep=0.5em]
-  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency.} OHBM 2026 Annual Meeting, Bordeaux, France. [Poster]
-  \item \textbf{Kim, J.}, \& Yao, Y.-W. (2025). \textit{When, not just how strongly: a delayed onset of attribute integration in depression.} HKU Summer Research Program, Hong Kong. [Poster]
+  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI decoding reveals intact neural color representations in color vision deficiency.} OHBM 2026 Annual Meeting, Bordeaux, France. [Poster]
 \end{itemize}
 
-% ===== Research Projects =====
-\cvsection{Research Projects}
-\cventry[7]\textbf{Preserved categorical identification with impaired hue interpolation in color vision deficiency motivates a cortically derived correction filter}\\
-\rolerow{Project Lead, sole first author \ \ (Advisor: Prof.\ Jiook Cha)}{Apr 2025 -- Present}
+% ===== Research Experiences =====
+\cvsection{Research Experiences}
+\cventry[7]\orgrow{Connectome Lab}{Seoul National University}
+\rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Jiook Cha)}{Apr 2025 -- Present}
 \begin{itemize}
-  \item Characterized individual-specific distortions of cortical hue geometry in color vision deficiency from fMRI, and translated them into personalized color-correction filters.
-  \item Funded by the SNU Undergraduate Research Grant (\$3,500).
+  \item Led a project characterizing distortions of cortical hue geometry in color vision deficiency from fMRI. Translated them into personalized filters that moved hue-discrimination thresholds to the control range.
+  \item Proposed an uncertainty quantification pipeline for an EEG neural field foundation model, measuring whether predicted uncertainty matches actual error and using it to guide electrode placement.
 \end{itemize}
-\vspace{0.5em}
+\vspace{0.50em}
 
-\cventry[6]\textbf{Depression relates to when, and not only how strongly, information enters a social decision}\\
-\rolerow{Project Lead, sole first author \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Present}
-\begin{itemize}
-  \item Built a time-varying drift-diffusion model with an onset-latency parameter ($\tau$) showing that depression integrates the second decision attribute later in social decisions.
-\end{itemize}
-\vspace{0.5em}
-
-\cventry[5]\textbf{Inverse Reinforcement Learning of Latent Human Planning}\\
-\rolerow{Project Lead, sole first author \ \ (Advisor: Prof.\ Woo-Young Ahn)}{Sep 2025 -- Present}
-\begin{itemize}
-  \item Developing an inverse reinforcement learning framework that more faithfully models human decision-making while recovering latent planning depth from behavior alone.
-\end{itemize}
-\vspace{0.8em}
-
-% ===== Research Experience =====
-% Page 2 must begin with this section (see CLAUDE.md: no section heading may be
-% orphaned at the foot of a page)
-\newpage
-\cvsection{Research Experience}
-\orgrow{Connectome Lab}{Seoul National University}
-\rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Jiook Cha)}{Jul 2026 -- Present}
-Research area: Brain foundation models; neural fields
-\vspace{0.4em}
-
-\orgrow{Computational Clinical Science Lab}{Seoul National University}
+\cventry[4]\orgrow{Computational Clinical Science Lab}{Seoul National University}
 \rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Woo-Young Ahn)}{Apr 2025 -- Present}
-Research area: Inverse RL; computational psychiatry; multimodal digital phenotyping
-\vspace{0.4em}
+\begin{itemize}
+  \item Developed SC-AIRL, a cognitively informed inverse RL framework raising action prediction accuracy by 31\% over standard AIRL. The inferred planning depth significantly correlated with trait anxiety.
+\end{itemize}
+\vspace{0.50em}
 
-\orgrow{Mental health, Internet, Neuroscience \& Decision-making (MIND) Lab}{University of Hong Kong}
+\cventry[4]\orgrow{MIND Lab}{University of Hong Kong}
 \rolerow{Visiting Researcher \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Aug 2025}
-Research area: Computational modeling of social decision-making
-\vspace{0.5em}
+\begin{itemize}
+  \item Adapted a time-varying drift-diffusion model to social decision data with an onset-latency parameter. Showed that the depressed-range group integrates the reward--emotion contrast $0.29$\,s later ($d = 0.32$).
+\end{itemize}
+\newpage
+% ===== Scholarships & Honors =====
+\cvsection{Scholarships \& Honors}
+\orgrow[0.24]{KOSAF Humanity 100 Years Undergraduate Scholarship \ \ \textmd{(\$12{,}500)}}{Mar 2025 -- Jul 2026}
+\orgrow[0.24]{SNU Undergraduate Research Grant \ \ \textmd{(\$3{,}500)}}{Apr 2025}
+\orgrow[0.24]{Best Poster Award, SNU Undergraduate Research Program}{Jan 2026}
+\orgrow[0.24]{SNU Student-Proposed Liberal Arts Course Contest \ \ \textmd{(1st Place)}}{Jul 2023}
+\vspace{-13.6pt}
 
-% ===== Scholarships & Fellowships =====
-\cvsection{Scholarships \& Fellowships}
-\orgrow[0.24]{KOSAF Humanity 100 Years Undergraduate Scholarship}{Mar 2025 -- Jul 2026}
-\rolerow[0.24]{Amount: \$12{,}500}{}
+% ===== Relevant Coursework =====
+\cvsection{Relevant Coursework}
+\courserow{Neuroscience}{Neuroscience · Data Science in Human Neuroimaging · Clinical Neuropsychology · Cognitive Processes · Computational Modeling in Experimental Psychology · Brain, Mind, and Behavior}
+\courserow{Computer Science}{Data Structures · Algorithms · Computer Architecture · Logic Design · Computer Programming · Computational Linguistics}
+\courserow{Mathematics \& Statistics}{Linear Algebra · Discrete Mathematics · Calculus I--II · Psychological Statistics · Advanced Psychological Statistics }
+\vspace{-8.5pt}
 
-\orgrow[0.24]{SNU Undergraduate Research Grant}{Apr 2025}
-\rolerow[0.24]{Amount: \$3{,}500}{}
-
-\orgrow[0.24]{The University of Hong Kong Foundation for Educational Development and Research Scholarship}{Jun 2025 -- Aug 2025}
-\rolerow[0.24]{Amount: \$1{,}300}{}
-
-\orgrow[0.24]{Superior Academic Performance Scholarship}{Mar 2022, 2023; Sep 2022}
-\rolerow[0.24]{Amount: \$1{,}650 each}{}
-
-% ===== Honors & Awards =====
-\cvsection{Honors \& Awards}
-\orgrow[0.15]{Best Poster Award, SNU Undergraduate Research Program}{Jan 2026}
-\orgrow[0.15]{SNU Student-Proposed Liberal Arts Course Contest (1st Place)}{Jul 2023}
-
+% ===== Academic Services =====
+\cvsection{Academic Services}
+\textbf{Conference Reviewer:} NeurIPS 2026 Workshop on Foundation Models for the Brain and Body\\
+\textbf{Volunteer:} ICML 2026
 % ===== Teaching =====
-\cvsection{Teaching}
-\orgrow{Teaching Assistant, Basic Computing}{Seoul National University}
-\rolerow{English (Mar 2026) \quad · \quad Korean (Sep 2025)}{}
-\vspace{0.5em}
-
+\cvsection{Teaching Experience}
+\orgrow{Basic Computing: First Adventure in Computing}{Seoul National University}
+\rolerow{Teaching Assistant \ \ (Instructors: Yamada Akihiko, Heajung Min)}{Autumn 2025 · Spring 2026}
+Instructed laboratory classes regarding Python and basic programming for local and international students; English-medium section in Spring 2026.
 % ===== Languages =====
 \cvsection{Languages}
-\textbf{Human:} Korean (Native), \ \ English (Full Professional Proficiency), \ \ French (Beginner)\\
-\textbf{Programming:} Python, R, Stan, C++, Java
+\textbf{Programming:} Python (Advanced), R, C++, Java (Proficient), Stan (Intermediate)
 
 \end{document}
