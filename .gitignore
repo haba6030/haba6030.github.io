@@ -25,6 +25,13 @@ CV/references/
 about_me/
 proposals/
 
+# Personal documents (never commit to this public repo)
+transcript*.pdf
+results/
+
+# Agent instructions (kept local)
+CLAUDE.md
+
 # Hidden files and folders
 .*
 !.gitignore
