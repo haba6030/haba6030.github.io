@@ -43,9 +43,9 @@
 }
 \newcommand{\cvsection}[1]{%
   \needspace{4\baselineskip}%
-  \vspace{0.45em}
+  \vspace{0.81em}
   {\large\bfseries\MakeUppercase{#1}}\par
-  \vspace{0.15em}\hrule height 0.6pt \vspace{0.40em}
+  \vspace{0.15em}\hrule height 0.6pt \vspace{0.30em}
 }
 \newcommand{\cvname}[1]{\vspace{-0.2em}{\LARGE\bfseries #1}\par\vspace{0.3em}}
 \newcommand{\cvline}[1]{#1\par}
@@ -62,8 +62,8 @@
 % ===== Research Interest =====
 \cvsection{Research Interests}
 \begin{itemize}
- \item \textit{Computational Neuroscience} (computational principles and latent structure shared by brain and behavior)
- \item \textit{Neuro-Inspired AI and AI for Neuroscience} (multimodal predictive models)
+ \item \textit{Computational Neuroscience} (principles linking brain and behavior through shared latent structure)
+ \item \textit{NeuroAI and AI for Neuroscience} (brain foundation models; neuro-inspired AI)
  \item \textit{Computational Psychiatry} (model-derived markers; predicting intervention response)
 \end{itemize}
 
@@ -72,65 +72,68 @@
 \orgrow{Seoul National University}{Seoul, South Korea}
 \rolerow{B.S. Computer Science · B.A. Psychology · B.A. Linguistics}{Mar 2021 -- Exp. Feb 2027}
 GPA: 4.18 / 4.3 (3.97 / 4.0) · 9 semesters (Mandatory military service, Jul 2023 -- Jan 2025)
-\vspace{0.35em}
+\vspace{0.63em}
 
 \orgrow{The University of Hong Kong}{Hong Kong SAR}
-\rolerow{Summer Research Program, Faculty of Psychology}{Jun 2025 -- Aug 2025}
+\rolerow{Summer Research Program, Department of Psychology}{Jun 2025 -- Aug 2025}
 \vspace{-15.2pt}
 
 % ===== Publications & Manuscripts =====
 \cvsection{Publications \& Manuscripts}
 \textit{Workshop Papers}\par\vspace{0.1em}
-\begin{itemize}[itemsep=0.3em]
+\begin{itemize}[itemsep=0.54em]
   \item \textbf{Kim, J.}, \& Ryu, J. (2026). \textit{Conversational relevance in the conjunction fallacy is represented independently in language models.} Accepted for Conference on Neural Information Processing Systems (NeurIPS) 2026 Workshop on Linguistic Principles for Foundation Models, Sydney, Australia. \href{https://openreview.net/forum?id=aVWJk84zeg}{[paper]}
   \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring individualized color-vision distortions from fMRI hue-representation geometry.} Presented at International Conference on Machine Learning (ICML) 2026 Workshop on Structured Data for Health, Seoul, Korea. \href{https://openreview.net/forum?id=YSptfeekLI}{[paper]}
 \end{itemize}
-\vspace{0.25em}
+\vspace{0.45em}
 \textit{Under Review}\par\vspace{0.1em}
-\begin{itemize}[itemsep=0.3em]
+\begin{itemize}[itemsep=0.54em]
   \item \textbf{Kim, J.}, Jeong, J., Yun, H., Oh, M.-H., \& Ahn, W.-Y. (2026). \textit{Inverse reinforcement learning with state-dependent foresight for human decision making.} Under review at the International Conference on Learning Representations (ICLR).
 \end{itemize}
-\vspace{0.25em}
+\vspace{0.45em}
 \textit{In Preparation}\par\vspace{0.1em}
-\begin{itemize}[itemsep=0.3em]
+\begin{itemize}[itemsep=0.54em]
   \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. \textit{Preserved categorical identification with impaired hue interpolation in color vision deficiency motivates a cortically derived correction filter.}
-  \item \textbf{Kim, J.}, \& Yao, Y.-W. \textit{Depression relates to when, and not only how strongly, information enters a social decision.}
-\end{itemize}
-
-% ===== Presentations =====
-\cvsection{Conference Presentation}
-\begin{itemize}[itemsep=0.5em]
-  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI decoding reveals intact neural color representations in color vision deficiency.} OHBM 2026 Annual Meeting, Bordeaux, France. [Poster]
+  \item \textbf{Kim, J.}, \& Yao, Y.-W. \textit{Depression is associated with weaker evidence accumulation and greater caution during social decision-making.}
 \end{itemize}
 
 % ===== Research Experiences =====
 \cvsection{Research Experiences}
-\cventry[7]\orgrow{Connectome Lab}{Seoul National University}
+\cventry[8]\orgrow{Connectome Lab}{Seoul National University}
 \rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Jiook Cha)}{Apr 2025 -- Present}
 \begin{itemize}
   \item Led a project characterizing distortions of cortical hue geometry in color vision deficiency from fMRI. Translated them into personalized filters that moved hue-discrimination thresholds to the control range.
   \item Proposed an uncertainty quantification pipeline for an EEG neural field foundation model, measuring whether predicted uncertainty matches actual error and using it to guide electrode placement.
+  \item Improving a functional brain foundation model by aligning it with neuroscience-literature text embeddings.
 \end{itemize}
-\vspace{0.50em}
+\vspace{0.90em}
 
-\cventry[4]\orgrow{Computational Clinical Science Lab}{Seoul National University}
+\cventry[5]\orgrow{Computational Clinical Science Lab}{Seoul National University}
 \rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Woo-Young Ahn)}{Apr 2025 -- Present}
 \begin{itemize}
-  \item Developed SC-AIRL, an inverse RL framework with state-dependent foresight, raising action accuracy by up to 10 points over standard AIRL. Inferred planning depth correlated with anxiety and impulsivity.
+  \item Led the development of SC-AIRL, an inverse RL model with state-dependent foresight, raising action accuracy by up to 10 points over AIRL. Inferred planning depth correlated with anxiety and impulsivity.
+  \item Predicting alcohol-use severity from multimodal data with sparse PLS and hierarchical Bayesian modeling.
 \end{itemize}
-\vspace{0.50em}
+\vspace{0.90em}
 
 \cventry[4]\orgrow{MIND Lab}{University of Hong Kong}
 \rolerow{Visiting Researcher \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Aug 2025}
 \begin{itemize}
-  \item Adapted a time-varying drift-diffusion model to social decision data with an onset-latency parameter. Showed that the depressed-range group integrates the reward--emotion contrast $0.29$\,s later ($d = 0.32$).
+  \item Fit stationary and time-varying drift-diffusion models to ultimatum-game data ($N = 351$). The depressed-range group showed weaker evidence accumulation ($d = 0.30$) and greater caution ($d = 0.40$).
 \end{itemize}
-\newpage
+% ===== Presentations =====
+\cvsection{Conference Presentations}
+\begin{itemize}[itemsep=0.5em]
+  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI decoding reveals intact neural color representations in color vision deficiency.} Organization for Human Brain Mapping (OHBM) 2026 Annual Meeting, Bordeaux, France. [Poster]
+  \item \textbf{Kim, J.}, \& Cha, J. (2026). \textit{A framework decomposing individual arousal predictions into visual-concept and neural contributions.} Submitted to Computational and Systems Neuroscience (Cosyne) 2027.
+\end{itemize}
+
 % ===== Scholarships & Honors =====
 \cvsection{Scholarships \& Honors}
 \orgrow[0.24]{KOSAF Humanity 100 Years Undergraduate Scholarship \ \ \textmd{(\$12{,}500)}}{Mar 2025 -- Jul 2026}
 \orgrow[0.24]{SNU Undergraduate Research Grant \ \ \textmd{(\$3{,}500)}}{Apr 2025}
 \orgrow[0.24]{Best Poster Award, SNU Undergraduate Research Program}{Jan 2026}
+\orgrow[0.24]{SNU Academic Excellence Scholarship \ \ \textmd{(3 semesters)}}{Mar 2022 -- Jun 2023}
 \orgrow[0.24]{SNU Student-Proposed Liberal Arts Course Contest \ \ \textmd{(1st Place)}}{Jul 2023}
 \vspace{-13.6pt}
 
