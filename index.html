@@ -145,6 +145,16 @@
       border-bottom: 2px solid var(--brand-2);
     }
 
+    h3.subsection {
+      color: var(--brand);
+      font-size: 1.1rem;
+      margin: 1.2rem 0 0.4rem 0;
+    }
+
+    h2 + h3.subsection {
+      margin-top: 0;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -325,6 +335,27 @@
       line-height: 1.5;
     }
 
+    .news-list.collapsed > .news-item:nth-child(n+3) {
+      display: none;
+    }
+
+    .news-toggle {
+      display: block;
+      margin: 0.6rem auto 0;
+      padding: 0;
+      border: none;
+      background: none;
+      color: var(--brand-2);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .news-toggle:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 520px) {
       .news-item {
         grid-template-columns: 1fr;
@@ -399,8 +430,7 @@
           <li><a href="#news">News</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#experiences">Research Experiences</a></li>
-          <li><a href="#honors">Honors and Awards</a></li>
-          <li><a href="#scholarships">Scholarships &amp; Fellowships</a></li>
+          <li><a href="#honors">Scholarships &amp; Honors</a></li>
           <li><a href="#teaching">Teaching</a></li>
         </ul>
       </nav>
@@ -444,6 +474,10 @@
           <h2>News</h2>
           <ul class="news-list">
             <li class="news-item">
+              <span class="news-date">Nov 2026</span>
+              <span class="news-body">Our preprint on depressive symptoms and evidence accumulation in social decision-making is now on <a href="https://osf.io/preprints/psyarxiv/npv9f_v1" target="_blank" rel="noopener"><strong>PsyArXiv</strong></a>.</span>
+            </li>
+            <li class="news-item">
               <span class="news-date">Sep 2026</span>
               <span class="news-body">Our paper on conversational relevance in the conjunction fallacy was accepted to the <strong>NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models</strong> (LP4FM). 🎉</span>
             </li>
@@ -464,6 +498,7 @@
               <span class="news-body">Awarded the <strong>KOSAF Humanity 100 Years Undergraduate Scholarship</strong>. 🎓</span>
             </li>
           </ul>
+          <button type="button" class="news-toggle" aria-expanded="false" hidden>See more</button>
         </section>
 
         <!-- Publications -->
@@ -513,7 +548,7 @@
               <div class="pub-body">
                 <div class="pub-title">Inverse reinforcement learning with state-dependent foresight for human decision making</div>
                 <div class="pub-authors"><strong>Jinil Kim</strong>, Jinwoo Jeong, Hyeongjun Yun, Min-hwan Oh, Woo-Young Ahn</div>
-                <div class="pub-venue">Under review at the <em>International Conference on Learning Representations (ICLR)</em>. 2026.</div>
+                <div class="pub-venue">Under review at the <em>International Conference on Learning Representations (ICLR)</em>. 2027.</div>
               </div>
             </div>
 
@@ -561,21 +596,13 @@
           </div>
 
           <div class="pub-group">
-            <div class="pub-group-title">Presentations</div>
+            <div class="pub-group-title">Conference Presentations</div>
 
             <div class="pub-entry no-figure">
               <div class="pub-body">
                 <div class="pub-title">fMRI Decoding Reveals Intact Neural Color Representations in Color Vision Deficiency</div>
                 <div class="pub-authors"><strong>Jinil Kim</strong>, Minkue Cho, Jungwoo Seo, Jiook Cha</div>
                 <div class="pub-venue"><em>OHBM 2026 Annual Meeting</em>, Bordeaux, France. 2026. <span class="pub-tag">Poster</span></div>
-              </div>
-            </div>
-
-            <div class="pub-entry no-figure">
-              <div class="pub-body">
-                <div class="pub-title">When, not just how strongly: a delayed onset of attribute integration in depression</div>
-                <div class="pub-authors"><strong>Jinil Kim</strong>, Yuan-Wei Yao</div>
-                <div class="pub-venue"><em>HKU Summer Research Program</em>, Hong Kong. 2025. <span class="pub-tag">Poster</span></div>
               </div>
             </div>
           </div>
@@ -602,7 +629,7 @@
               </div>
               <div class="subtle">Undergraduate RA</div>
               <div class="exp-meta"><span class="exp-label">Advisor:</span> Prof. Woo-Young Ahn</div>
-              <div class="exp-meta"><span class="exp-label">Research Area:</span> Inverse RL; Computational Psychiatry; Multimodal Digital Phenotyping</div>
+              <div class="exp-meta"><span class="exp-label">Research Area:</span> Human Cognition-Informed Inverse RL; Computational Psychiatry; Multimodal Digital Phenotyping</div>
             </div>
 
             <div class="card">
@@ -618,22 +645,11 @@
           </div>
         </section>
 
-        <!-- Honors & Awards -->
+        <!-- Scholarships & Honors -->
         <section id="honors">
-          <h2>Honors and Awards</h2>
-          <div class="grid">
-            <div class="card">
-              <div class="row"><div class="title">Best Poster Award, SNU Undergraduate Research Program</div><div class="subtle">Jan 2026</div></div>
-            </div>
-            <div class="card">
-              <div class="row"><div class="title">SNU Student-Proposed Liberal Arts Course Contest (1st Place)</div><div class="subtle">Jul 2023</div></div>
-            </div>
-          </div>
-        </section>
+          <h2>Scholarships &amp; Honors</h2>
 
-        <!-- Scholarships & Fellowships -->
-        <section id="scholarships">
-          <h2>Scholarships &amp; Fellowships</h2>
+          <h3 class="subsection" id="scholarships">Scholarships &amp; Fellowships</h3>
           <div class="grid">
             <div class="card">
               <div class="row"><div class="title">KOSAF Humanity 100 Years Undergraduate Scholarship</div><div class="subtle">Mar 2025 – Jul 2026</div></div>
@@ -650,6 +666,16 @@
             <div class="card">
               <div class="row"><div class="title">Superior Academic Performance Scholarship</div><div class="subtle">Mar 2022, 2023; Sep 2022</div></div>
               <div class="subtle">Amount: $1,650 each</div>
+            </div>
+          </div>
+
+          <h3 class="subsection" id="awards">Honors &amp; Awards</h3>
+          <div class="grid">
+            <div class="card">
+              <div class="row"><div class="title">Best Poster Award, SNU Undergraduate Research Program</div><div class="subtle">Jan 2026</div></div>
+            </div>
+            <div class="card">
+              <div class="row"><div class="title">SNU Student-Proposed Liberal Arts Course Contest (1st Place)</div><div class="subtle">Jul 2023</div></div>
             </div>
           </div>
         </section>
@@ -707,6 +733,19 @@
     }, observerOptions);
 
     sections.forEach(section => observer.observe(section));
+
+    // News: show the two most recent items; the rest open with "See more"
+    const newsList = document.querySelector('.news-list');
+    const newsToggle = document.querySelector('.news-toggle');
+    if (newsList && newsToggle && newsList.children.length > 2) {
+      newsList.classList.add('collapsed');
+      newsToggle.hidden = false;
+      newsToggle.addEventListener('click', () => {
+        const collapsed = newsList.classList.toggle('collapsed');
+        newsToggle.textContent = collapsed ? 'See more' : 'See less';
+        newsToggle.setAttribute('aria-expanded', String(!collapsed));
+      });
+    }
   </script>
 </body>
 </html>
