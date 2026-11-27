@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage[
+  a4paper,
+  left=1.4cm,
+  right=1.4cm,
+  top=0.9cm,
+  bottom=0.9cm
+]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.05em}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=black}
+\setlist[itemize]{nosep,leftmargin=1.2em}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\orgrow}[3][0.28]{%
+  \newcolumntype{R}{>{\raggedleft\arraybackslash}p{#1\textwidth}}%
+  \begin{tabularx}{\textwidth}{@{}L R@{}}%
+  \textbf{#2} & #3\\
+  \end{tabularx}
+}
+\newcommand{\rolerow}[3][0.28]{%
+  \newcolumntype{R}{>{\raggedleft\arraybackslash}p{#1\textwidth}}%
+  \begin{tabularx}{\textwidth}{@{}L R@{}}%
+  #2 & #3\\
+  \end{tabularx}\vspace{0.15em}
+}
+\newcommand{\courserow}[2]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.21\textwidth} L@{}}%
+  \textbf{#1} & #2\\
+  \end{tabularx}\vspace{0.15em}
+}
+\newcommand{\cvsection}[1]{%
+  \needspace{4\baselineskip}%
+  \vspace{0.70em}
+  {\large\bfseries\MakeUppercase{#1}}\par
+  \vspace{0.15em}\hrule height 0.6pt \vspace{0.30em}
+}
+\newcommand{\cvname}[1]{\vspace{-0.2em}{\LARGE\bfseries #1}\par\vspace{0.3em}}
+\newcommand{\cvline}[1]{#1\par}
+% Keep an entry (title + role row + its bullets) from splitting across pages
+\newcommand{\cventry}[1][5]{\needspace{#1\baselineskip}}
+
+\begin{document}
+\pagestyle{empty}
+
+% ===== Header =====
+\cvname{Jinil Kim}
+\cvline{\href{mailto:haba6030@snu.ac.kr}{haba6030@snu.ac.kr} \ \ | \ \ \href{https://haba6030.github.io/}{Homepage} \ \ | \ \ \href{https://github.com/haba6030}{GitHub} \ \ | \ \ \href{https://www.linkedin.com/in/jinilkimpotato/}{LinkedIn}}
+
+% ===== Research Interest =====
+\cvsection{Research Interests}
+\begin{itemize}
+ \item \textit{Computational Neuroscience} (principles linking brain and behavior; inferring their shared latent states)
+ \item \textit{NeuroAI and AI for Neuroscience} (brain foundation models; neuro-inspired AI)
+ \item \textit{Computational Psychiatry} (model-derived markers; predicting intervention response)
+\end{itemize}
+
+% ===== Education =====
+\cvsection{Education}
+\orgrow{Seoul National University}{Seoul, South Korea}
+\rolerow{B.S. Computer Science · B.A. Psychology · B.A. Linguistics}{Mar 2021 -- Exp. Feb 2027}
+GPA: 4.18 / 4.3 (3.97 / 4.0) · 9 semesters (Mandatory military service, Jul 2023 -- Jan 2025)
+\vspace{0.63em}
+
+\orgrow{The University of Hong Kong}{Hong Kong SAR}
+\rolerow{Summer Research Program, Department of Psychology}{Jun 2025 -- Aug 2025}
+\vspace{-15.2pt}
+
+% ===== Publications & Manuscripts =====
+\cvsection{Publications \& Manuscripts}
+\textit{Workshop Papers}\par\vspace{0.1em}
+\begin{itemize}[itemsep=0.54em]
+  \item \textbf{Kim, J.}, \& Ryu, J. (2026). \textit{Conversational relevance in the conjunction fallacy is represented independently in language models.} Accepted for Conference on Neural Information Processing Systems (NeurIPS) 2026 Workshop on Linguistic Principles for Foundation Models, Sydney, Australia. \href{https://openreview.net/forum?id=aVWJk84zeg}{[paper]}
+  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. (2026). \textit{Inferring individualized color-vision distortions from fMRI hue-representation geometry.} Presented at International Conference on Machine Learning (ICML) 2026 Workshop on Structured Data for Health, Seoul, Korea. \href{https://openreview.net/forum?id=YSptfeekLI}{[paper]}
+\end{itemize}
+\vspace{0.45em}
+\textit{Under Review \& Submitted}\par\vspace{0.1em}
+\begin{itemize}[itemsep=0.54em]
+  \item \textbf{Kim, J.}, Jeong, J., Yun, H., Oh, M.-H., \& Ahn, W.-Y. (2026). \textit{Inverse reinforcement learning with state-dependent foresight for human decision making.} Under review at ICLR 2027. \href{https://arxiv.org/abs/2611.34351}{[arXiv]}
+  \item \textbf{Kim, J.}, \& Yao, Y.-W. (2026). \textit{Depressive symptoms are associated with weaker evidence accumulation and greater caution during social decision-making.} Submitted to \textit{Communications Psychology}. \href{https://osf.io/preprints/psyarxiv/npv9f}{[preprint]}
+  \item \textbf{Kim, J.}, Lee, T., Lee, S., Oprescu, M., Luo, X., Park, D. K., \& Cha, J. (2026). \textit{Evaluating fidelity and uncertainty in generative EEG reconstruction.} Under review at AAAI 2027 Workshop on Neuro for AI \& AI for Neuro.
+\end{itemize}
+\vspace{0.45em}
+\textit{In Preparation}\par\vspace{0.1em}
+\begin{itemize}[itemsep=0.54em]
+  \item \textbf{Kim, J.}, Cho, A. M., Seo, J., \& Cha, J. \textit{Preserved categorical identification with impaired hue interpolation in color vision deficiency motivates a cortically derived correction filter.}
+\end{itemize}
+
+% ===== Research Experiences =====
+\cvsection{Research Experiences}
+\cventry[8]\orgrow{Connectome Lab}{Seoul National University}
+\rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Jiook Cha)}{Apr 2025 -- Present}
+\begin{itemize}
+  \item Led a project characterizing distortions of cortical hue geometry in color vision deficiency from fMRI. Translated them into personalized filters that moved hue-discrimination thresholds to the control range.
+  \item Led uncertainty evaluation of generative EEG foundation models, showing that distributional scores catch distortions that point metrics miss and that seed variance can flag unreliable channels.
+  \item Training fMRI foundation models with literature-derived priors via text alignment or by using each region's functional profile as its positional encoding.
+\end{itemize}
+\vspace{0.90em}
+
+\cventry[5]\orgrow{Computational Clinical Science Lab}{Seoul National University}
+\rolerow{Undergraduate RA \ \ (Advisor: Prof.\ Woo-Young Ahn)}{Apr 2025 -- Present}
+\begin{itemize}
+  \item Led the development of SC-AIRL, which adds state-dependent foresight to AIRL and raises accuracy on held-out human actions by 9--10 points. Inferred planning depth correlated with anxiety and impulsivity.
+  \item Testing whether fMRI, EEG, HRV, and survey data jointly predict alcohol-use severity ($n = 60$) and yield interpretable markers, using multiblock sparse PLS.
+\end{itemize}
+\vspace{0.90em}
+
+\cventry[4]\orgrow{MIND Lab}{University of Hong Kong}
+\rolerow{Visiting Researcher \ \ (Advisor: Prof.\ Yuan-Wei Yao)}{Jun 2025 -- Aug 2025}
+\begin{itemize}
+  \item Fit stationary and time-varying drift-diffusion models to social decisions ($N = 351$), linking depression to weaker evidence accumulation ($d = 0.30$), greater caution ($d = 0.40$), and later reward-emotion integration.
+\end{itemize}
+% ===== Presentations =====
+\cvsection{Conference Presentations}
+\begin{itemize}[itemsep=0.5em]
+  \item \textbf{Kim, J.}, Cho, M., Seo, J., \& Cha, J. (2026). \textit{fMRI decoding reveals intact neural color representations in color vision deficiency.} Organization for Human Brain Mapping (OHBM) 2026 Annual Meeting, Bordeaux, France. [Poster]
+  \item \textbf{Kim, J.}, \& Cha, J. (2026). \textit{A framework decomposing individual arousal predictions into visual-concept and neural contributions.} Submitted to Computational and Systems Neuroscience (Cosyne) 2027.
+\end{itemize}
+
+% ===== Scholarships & Honors =====
+\cvsection{Scholarships \& Honors}
+\orgrow[0.24]{KOSAF Humanity 100 Years Undergraduate Scholarship \ \ \textmd{(\$12{,}500)}}{Mar 2025 -- Jul 2026}
+\begin{itemize}[leftmargin=2.2em]
+  \item Awarded to one student in the College of Humanities at SNU in 2025; full tuition and living stipend.
+  \item Funded by the Korean Ministry of Education.
+\end{itemize}\vspace{0.15em}
+\orgrow[0.24]{Best Poster Award, SNU Undergraduate Research Program}{Jan 2026}
+\orgrow[0.24]{SNU Undergraduate Research Grant \ \ \textmd{(\$3{,}500)}}{Apr 2025}
+\orgrow[0.24]{SNU Student-Proposed Liberal Arts Course Contest \ \ \textmd{(1st Place)}}{Jul 2023}
+\begin{itemize}[leftmargin=2.2em]
+  \item Proposed course: \textit{Interdisciplinary Explorations with a Chatbot}.
+\end{itemize}\vspace{0.15em}
+\orgrow[0.24]{SNU Academic Excellence Scholarship}{Mar 2022 -- Jun 2023}
+\vspace{-13.6pt}
+
+% ===== Relevant Coursework =====
+\cvsection{Relevant Coursework}
+\courserow{Neuroscience}{Neuroscience · Data Science in Human Neuroimaging · Clinical Neuropsychology · Cognitive Processes · Computational Modeling in Experimental Psychology · Brain, Mind, and Behavior}
+\courserow{Computer Science}{Data Structures · Algorithms · Computer Architecture · Logic Design · Computer Programming · Computational Linguistics}
+\courserow{Mathematics \& Statistics}{Linear Algebra · Discrete Mathematics · Calculus I--II · Psychological Statistics · Advanced Psychological Statistics }
+\vspace{-8.5pt}
+
+% ===== Academic Services =====
+\cvsection{Academic Services}
+\textbf{Conference Reviewer:} NeurIPS 2026 Workshop on Foundation Models for the Brain and Body\\
+\textbf{Volunteer:} ICML 2026
+% ===== Teaching =====
+\cvsection{Teaching Experience}
+\orgrow{Basic Computing: First Adventure in Computing}{Seoul National University}
+\rolerow{Teaching Assistant \ \ (Instructors: Yamada Akihiko, Heajung Min)}{Autumn 2025 · Spring 2026}
+Taught Python lab sessions for local and international students, including an English-medium section in Spring 2026.
+% ===== Leadership & Activities (extended) =====
+\cvsection{Leadership \& Activities}
+\orgrow{Invited Speaker, SNU Multiple-Major Forum}{Apr 2026}
+\begin{itemize}
+  \item Gave a 20-minute talk and Q\&A for first- and second-year students, and mentored attendees one-on-one.
+\end{itemize}
+\vspace{0.45em}
+\cventry[4]\orgrow{Student Mental Health Supporters}{Seoul National University}
+\rolerow{Member, Vice-President, President}{Sep 2021 -- Jul 2023}
+\begin{itemize}
+  \item As president ($\sim$25 members, Fall 2022), managed the budget, ran meetings, and assigned project roles.
+  \item Co-organized 16 campus mental health projects over four semesters, including a website where students left messages of support during COVID-19.
+\end{itemize}
+\vspace{0.30em}
+
+% ===== Skills (extended) =====
+\cvsection{Skills}
+\textbf{Programming:} Python (advanced), R, C++, Java (proficient), Stan (intermediate)\\
+\textbf{Machine learning \& computing:} PyTorch, Slurm (GPU clusters), NERSC Perlmutter\\
+\textbf{Neuroimaging:} PsychoPy, BIDS, FSL, FreeSurfer, nilearn, BrainIAK
+
+\end{document}
